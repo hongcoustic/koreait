@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>자바스크립트 객체</h2>
+
+    <script>
+      let ar = [1, 3, 5];
+      console.log(ar[0]);
+
+      let a = {
+        title: "양홍민의 일기",
+        pages: 500,
+        author: "홍길동",
+        price: 15000, // 마지막 콤마는 통일성을 위해 붙이기도 한다.
+        "book store": "역삼", // 명령어나 일부 특수문자, 띄어쓰기 등을 방이름으로 설정하고자 한다면
+        // 작은 따옴표로 감쌀 수 있다.
+        print: function (sale) {
+          // 객체 메소드는 임의 함수를 화살표 형식 사용시 에러 발생함.
+          console.log("a 객체 안에 있는 함수가 실행됨!");
+          console.log(`책의 가격은 ${this.price}원 입니다.`);
+          console.log(
+            `${sale}% 할인된 책의 가격은 ${
+              (1 - sale * 0.01) * this.price
+            }원 입니다.`
+          );
+        },
+      };
+
+      console.log(a);
+      // 객체속에 저장된 값을 사용하기 위해서는
+      // 1. 하위연산자(.)와 방이름을 사용할 수 있다.
+      console.log(a.title);
+      // 2. 인덱스연산자와 방이름을 사용할 수 있다.(밥 이름을 문자열로 알려줘야함)
+      console.log(a["title"]);
+
+      // 방이름이 작은땀옴표로 감싸진 채 만들어졌다면, 하위연산자(.) 방식은 사용 불가.
+      console.log(a["book store"]);
+
+      a.print(50);
+
+      let b = {
+        title: "해리포터",
+        pages: 30,
+        author: "미상",
+        price: 3500,
+        "book store": "경기도",
+        print: function (sale) {
+          console.log("b 객체 안에 있는 함수가 실행됨!");
+          console.log(`책의 가격은 ${this.price}원 입니다.`);
+          console.log(
+            `${sale}% 할인된 책의 가격은 ${
+              (1 - sale * 0.01) * this.price
+            }원 입니다.`
+          );
+        },
+      };
+
+      b.print(20);
+    </script>
+  </body>
+</html>

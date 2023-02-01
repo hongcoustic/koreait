@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>이중 for문</h2>
+    <script>
+        for(let i = 0; i < 2; i++){
+            document.write('for문 시작!<br>');
+            for(let j = 0; j < 3; j++){
+                document.write(`i : ${i}, j : ${j} `);
+                document.write('안쪽 for문!<br>');
+            }
+            
+            document.write('for문 끝!<br>');
+        }
+
+        document.write('<h2>구구단 1단부터 9단까지 출력하기</h2>');
+        for(let i = 1; i < 10; i++){
+            document.write(`<h3>--- ${i}단 ---</h3>`);
+            for(let j = 1; j < 10; j++){
+                document.write(`${i} X ${j} = ${i*j}<br>`);
+            }
+        }
+
+        document.write('<h2>3단씩 출력하기</h2>')
+        for(i = 0; i <= 6; i+=3){
+            document.write(`----${i+1}단---- ----${i+2}단---- ----${i+3}단----<br>`)
+            for(j = 1; j <= 9; j++){
+                for(k = 1; k <= 3; k++){
+                    document.write(`${k+i} X ${j} = ${(k+i)*j}  | `)
+                }
+                document.write('<br>');
+            }
+        }
+
+    </script>
+</body>
+</html>

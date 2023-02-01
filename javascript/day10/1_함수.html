@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>함수</h2>
+  <script>
+    console.log('프로그램 시작')
+    let res = add(10, 20, 30) / 3;
+    console.log(`res : ${res}`);
+    console.log('프로그램 종료');
+
+    console.log('두번째 사용')
+    add(100, 200);
+
+    console.log('두번째 사용종료')
+
+
+    function add(a = 0, b = 100, c = 50) {
+      console.log(`a 의 값 : ${a}`);
+      console.log(`b 의 값 : ${b}`);
+      console.log(`c 의 값 : ${c}`);
+      console.log(`세 수를 더한 값 : ${a + b + c}`);
+      return a + b + c; // 함수 사용 결과를 return 옆에 있는 값으로 되돌려주는 역할을 한다.
+    }
+  </script>
+</body>
+
+</html>

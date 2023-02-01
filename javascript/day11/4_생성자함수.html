@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      속성과 메소드의 틀을 만들어 놓고,<br />
+      속성값만 우리가 원하게 바꾸는 방법
+    </h2>
+
+    <script>
+      // new : 연산자, 만들어진 객체를 메모리에 할당시키는 기능을 한다.
+      let a = new Book("홍길동전", "허균", 15000);
+      //   a.title = "홍길동전";
+      //   a.author = "허균";
+      //   a.price = 15000;
+      console.log(a);
+      a.show();
+
+      let b = new Book("해리포터", "제이 롤링", 20000);
+      //   b.title = "해리포터";
+      //   b.author = "제이 롤링";
+      //   b.price = 20000;
+      console.log(b);
+      b.show();
+
+      let c = new Book();
+      c.show();
+
+      // 객체를 만들 때 사용하는 함수(생성자) 정의, 암묵적으로 생성자 함수 이름의 첫글자는 대문자로 표기한다.
+      // 일반적으로 생성자에서 매개변수는 가급적 속성이름과 맞춰준다. (단, 속성이름 != 매개변수이름)
+      function Book(title = "기본값", author = "기본값", price = 0) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.show = function () {
+          console.log(`책정보!`);
+          console.log(`책제목 : ${this.title}`);
+          console.log(`저자 : ${this.author}`);
+          console.log(`가격 : ${this.price}원`);
+        };
+      }
+    </script>
+  </body>
+</html>

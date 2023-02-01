@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>객체 속성값 수정하기</h2>
+
+    <script>
+      let a = {
+        name: "양홍민",
+        age: 38,
+        info: function () {
+          console.log(`나의 이름은 ${this.name}이며 ${this.age}세 입니다.`);
+        },
+      };
+
+      console.log(a.name);
+      a.name = "김예진"; // 기존에 있던 객체 속성이라면 속성값을 수정한다.
+      a.info();
+
+      a.address = "서초구"; // 기존에 없던 객체 속성이라면 속성과 속성값을 추가한다.
+      console.log(a.address);
+
+      a.info = function () {
+        // 기존에 있던 객체 메소드도 수정할 수 있다.
+        console.log(`이름 : ${this.name}`);
+        console.log(`나이 : ${this.age}`);
+        console.log(`주소 : ${this.address}`);
+      };
+      a.info();
+
+      delete a.name; // delete 연산자를 통해 객체 속성 삭제
+      a.info();
+    </script>
+  </body>
+</html>

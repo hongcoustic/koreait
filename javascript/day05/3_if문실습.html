@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            color: red;
+            font-size: 50px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>결과</h2>
+    <script>
+        //두 숫자를 입력받아 둘 중 더 큰수를 출력하되, 같으면 '같다'고 출력
+        let a = Number(prompt('정수1'));
+        let b = Number(prompt('정수2'));
+        document.write('<p>')
+        if (a > b) {
+            document.write(a);
+        } else if(b > a){
+            document.write(b);
+        } else {
+            document.write('같다');
+        }
+        document.write('</p>')
+
+        // 숫자를 입력받아 짝수면 짝수, 홀수면 홀수
+        // let num = Number(prompt('숫자를 입력하세요.'));
+
+        // if(num % 2 == 0){
+        //     if(num == 0){
+        //         document.write('<p>잘못된 숫자</p>');
+        //     } else {
+        //         document.write('<p>짝수</p>');
+        //     }
+        // } else {
+        //     document.write('<p>홀수</p>');
+        // }
+    </script>
+</body>
+
+</html>

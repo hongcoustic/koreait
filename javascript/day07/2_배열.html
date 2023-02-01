@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <h2>배열</h2>
+    <script>
+        let ar1=[]; // new Array(); 로도 사용 가능하지만, 리터럴 표현식을 권장함
+        console.log(ar1);
+
+        let ar2=[10, '안녕', true]; // new Array(10, '안녕', true);
+        console.log(ar2);
+
+        // console.log(ar2[0]);
+        // console.log(ar2[1]);
+        // console.log(ar2[2]);
+        // console.log(ar2[3]); // 인덱스 번호 범위를 벗어나면 안된다.
+
+
+        // length 프로퍼티
+        console.log('배열 길이 : ' + ar2.length);
+
+        for(let i = 0; i < ar2.length; i++){
+            console.log(ar2[i]);
+        }
+
+        // for~in
+        for(let v in ar2){  // for~in문, 배열 길이만큼 반복한다.
+            console.log(ar2[v]);
+        }
+
+        // for~of
+        for(let a of ar2){ // for~of문, 배열 길이만큼 반복하지만 알아서 변수에 배열 요소가 들어간다.
+            console.log(a);
+        }
+
+        console.log(ar2);
+        ar2[0] = 100;   // 배열 속 값 수정하기
+        console.log(ar2);
+
+        let ar3 = [10, 20, ['안녕', '반가워']]; // 배열 안에 배열이 들어갈 수 있다.
+        // ar3에 길이는 ?
+        console.log(ar3.length);
+        for(let element of ar3){
+            console.log(element)
+        }
+
+        ar3[2][1] = '월요일';   // 배열 안에 배열 속 값 수정하기
+        console.log(ar3)
+
+
+    </script>
+</body>
+</html>

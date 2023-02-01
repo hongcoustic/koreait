@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>익명 함수</h2>
+
+    <script>
+        // 익명함수 사용 예시 1
+        let a = f1;
+
+        function f1(){
+            console.log('이름있는 f1 함수');
+        };
+
+        let b = function(){console.log('익명함수 1')};
+        // b 와 c는 동일하다.
+        let c = () => {
+            console.log('익명함수 3');
+        };
+
+        sort(a);
+        sort(b);
+
+        sort(function(){console.log('익명함수 2')});
+        sort(() => {
+            console.log('익명함수 4')
+        });
+
+        function sort(key){
+            key();
+        }
+
+        // 익명함수 사용 예시 2
+        let an1 = function(){
+            return '안녕';
+        };        
+        console.log(an1());
+
+        let an2 = () => '안녕2';    // 함수 사용값이 한줄이라 중괄호와 return 생략
+        console.log(an2());
+
+    </script>
+</body>
+</html>

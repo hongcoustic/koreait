@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Date 객체</h2>
+
+    <script>
+      let a = new Date();
+      console.log(a);
+      // Date 객체 안의 메소드
+      // getFullYear() : 해당 날짜 객체의 년도를 return
+      console.log(a.getFullYear());
+
+      // get.Day() : 해당 날짜 객체의 요일을 return
+      // 0 : 일요일, 1 : 월요일 ~ 6 : 토요일
+      console.log(a.getDay());
+
+      // get.Month() : 해당 날짜 객체의 월을 return
+      // 0 : 1월, 1 : 2월 ~ 11 : 12월
+      console.log(a.getMonth());
+
+      // get.Date() : 해당 날짜 객체의 일을 return
+      console.log(a.getDate());
+
+      // 'yyyy-mm-dd'
+      let b = new Date("2022-11-12");
+      console.log(b);
+
+      let c = new Date("2022-11-20T21:00:30");
+      console.log(c);
+
+      // 시간 뒤에 Z를 붙여주면, 기준 시간으로 계산된다. (입력된 시간값 + GMT)
+      let d = new Date("2020-10-15T00:00:00Z");
+      console.log(d);
+
+      // 1970년 1월 1일을 기준으로 몇 ms(밀리초)가 지났는지
+      // 1000밀리초 == 1초
+      let e = new Date(1000);
+      console.log(e);
+    </script>
+  </body>
+</html>

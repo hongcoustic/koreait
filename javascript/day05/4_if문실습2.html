@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+
+        }
+
+        p {
+            color: aquamarine;
+            font-weight: 900;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>결과</h2>
+    <script>
+        // 1. 사용자에게 정수를 입력받아 
+        // 해당 점수가 90이상이면 A, 80이상 90미만 B, 70이상 80미만이면 C, 70미만 F
+        // 당신의 점수는 ?? 입니다.
+
+        // 내가 작성한 코드
+        // let scr = Number(prompt('점수를 입력하세요'));
+        // document.write('<p>당신의 점수는 ');
+        // if(scr>=90){
+        //     document.write('A');
+        // } else if(scr>=80) {
+        //     document.write('B');
+        // } else if(scr>=70) {
+        //     document.write('C');
+        // } else {
+        //     document.write('F');
+        // } 
+        // document.write('입니다.</p>');
+
+        // 변형한 코드
+        // let scr = Number(prompt('점수를 입력하세요'));
+        // let grade;
+        // if(scr>=90){
+        //     grade = 'A'
+        // } else if(scr>=80) {
+        //     grade = 'B'
+        // } else if(scr>=70) {
+        //     grade = 'C'
+        // } else {
+        //     grade = 'F'
+        // } 
+        // document.write(`<p>당신의 점수는 ${grade} 입니다.</p>`);
+
+
+        // 2. 사용자에게 연도를 입력받아 윤년이라면 윤년, 평년이라면 평년 출력하기
+        // 4의 배수, 100의 배수, 400의 배수라면 윤년 2000
+        // 4의 배수, 100의 배수가 맞고 400의 배수가 아니라면 평년 2100 1900
+        // 4의 배수, 100의 배수 아니고, 400의 배수 아니라면 윤년 2012 2020
+        // 4의 배수, 100의 배수, 400의 배수가 모두 아니라면 평년 2021 2023
+
+        // 내가 작성한 코드
+        // let year = Number(prompt('연도를 입력하세요'));
+        // let isLeap;
+        // if(year % 400 == 0){
+        //     isLeap = '윤년'
+        // } else if(year % 100 == 0){
+        //     isLeap = '평년'
+        // } else if(year % 4 == 0) {
+        //     isLeap = '윤년'
+        // } else {
+        //     isLeap = '평년'
+        // } 
+        // document.write('<p>' + year + '년도는 ' + isLeap + '입니다.</p>');
+
+        // 변형한 코드
+        // let year = Number(prompt('연도를 입력하세요'));
+        // let isLeap;
+        // if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        //     isLeap = '윤년';
+        // } else {
+        //     isLeap = '평년';
+        // }
+        // document.write(`<p> ${year}년도는 ${isLeap}입니다.</p>`);
+
+        //날짜 가져오기
+        let now = new Date();
+        console.log(now.getFullYear());
+        console.log(typeof(now));
+            
+
+    </script>
+</body>
+
+</html>

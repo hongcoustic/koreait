@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>사용자에게 값 입력받기</h2>
+
+    <script>
+        let a = prompt('이름을 입력하세요');
+        document.write('<h2>' + a + ' 님 환영합니다.</h2>');
+
+        // 동일한 값이 출력되지만, 산술연산자 + 를 통해 문자+문자로 코드 압축
+        document.write('<h2>');
+        document.write(a);
+        document.write(' 님 환영합니다.</h2>');
+        
+    </script>
+</body>
+</html>

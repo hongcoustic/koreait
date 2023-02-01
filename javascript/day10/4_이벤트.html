@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 150px;
+            border: 1px solid black;
+            margin: 20px 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h2>마우스 이벤트</h2>
+    <!-- 여러개의 함수 실행도 가능하며, 함수 실행은 왼쪽부터 순서대로 실행된다. -->
+    <div onclick="f1(); f8();">click 발생</div> 
+    <div ondblclick="f2()">dblclick 발생</div>
+    <div onmousedown="f3()">mousedown 발생</div>
+    <div onmousemove="f4()">mousemove 발생</div>
+    <div onmouseover="f5()">mouseover 발생</div>
+    <div onmouseout="f6()">mouseout 발생</div>
+    <div onmouseup="f7()">mouseup 발생</div>
+
+    <div id="div1">이벤트를 다루는 두번째 방식</div>
+    <div id="div2">이벤트를 다루는 세번째 방식</div>
+
+    <script>
+        let myDiv2 = document.querySelector('#div2');
+
+        myDiv2.onclick = () => console.log('클릭됨');
+
+
+        let myDiv = document.getElementById('div1');
+
+        // 같은 이벤트에서 동시에 여러개의 함수를 실행 시킬 수는 없다.
+        // 마지막 함수만 실행 된다.
+        myDiv.onclick = () => console.log('div1 태그가  클릭됨');
+        myDiv.onclick = () => console.log('두번째 실행됨!');    
+
+        console.log(myDiv);
+
+        function f1(){
+            alert('click 이벤트 발생!');
+        };
+        function f2(){
+            alert('dblclick 이벤트 발생!');
+        };
+        function f3(){
+            console.log('mousedown 이벤트 발생!');
+        };
+        function f4(){
+            console.log('mousemove 이벤트 발생!');
+        };
+        function f5(){
+            console.log('mouseover 이벤트 발생!');
+        };
+        function f6(){
+            console.log('mouseout 이벤트 발생!');
+        };
+        function f7(){
+            console.log('mouseup 이벤트 발생!');
+        };
+        function f8(){
+            console.log('두번째 함수도 실행됨!');
+        };
+    </script>
+</body>
+</html>

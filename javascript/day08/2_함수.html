@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>사용자 정의 함수</h2>
+    <button onclick="f1()">클릭해보세요!</button>
+    <script>
+        function f1(){
+            console.log('클릭!');
+            console.log('반가워');
+        }
+        function print(name, age){   // name 이라는 변수는 매개변수(parameter)
+            // 매개변수에는 함수를 사용할때 소괄호 안에 넘겨준 값(인자값, 인수값, argument)이 대입된다.
+            console.log('만나서 반갑습니다.');
+            console.log('제 이름은 ' + name +' 입니다.');
+            console.log('저의 나이는 ' + age + ' 입니다.')
+        }
+        print('양홍민', 20);
+        console.log('오늘은 수요일');
+        print('김철순', 30);
+
+        // 함수 사용 결과를 값으로 되돌리기.
+        // 매개변수로 전달받은 배열의 총 합을 알아내는 함수
+        function getSumOfArray(ar){
+            let total = 0;
+            for(let element of ar){     // for~of문, 반복 횟수는 배열의 길이 만큼, 변수에는 배열의 요소가 순서대로 대입된다.
+                total += element;
+            }
+            console.log(total);
+            return total;   // 함수 사용 결과를 값 으로 되돌려준다.
+                            // return 을 사용하지 않으면 함수 사용결과가 값이 아니다.
+        }
+
+        console.log(getSumOfArray([1, 5, 4]) /3);
+        let res = getSumOfArray([10, 20, 30, 40]);
+        console.log(res);
+
+        console.log(Math.floor(3.14));
+    </script>
+</body>
+</html>

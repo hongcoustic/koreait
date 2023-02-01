@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 실습</title>
+</head>
+<body>
+
+    <script>
+        // 사용자에게 정수 하나를 입력 받아서 해당 정수를 4로 나눴을때, 몫과 나머지 출력하기
+        // let num = Number(prompt('숫자를 입력하세요.'));
+        // document.write('<h2>입력받은 정수를 4로 나눈 값은 다음과 같습니다.</h2>');
+        // document.write('<h3>몫 : ' + parseInt((num / 4)) + '</h3>');
+        // document.write('<h3>나머지 : ' + (num % 4) + '</h3>');        
+
+        // 사용자에게 두자릿 수 정수를 입력 받아서 해당 정수의 십의 자리와 일의 자리 숫자 출력하기48
+        // let num = Number(prompt('두자리 숫자를 입력하세요.'));
+        // document.write('<h2>입력받은 두자리 숫자는 다음과 같습니다.</h2>');
+        // document.write('<h3>10의 자리 : ' + parseInt((num / 10)) + '</h3>');
+        // document.write('<h3>1의 자리 : ' + parseInt((num % 10)) + '</h3>');     
+
+
+        // 노래 한 곡당 300원인 코인노래방이 있다.
+        // 사용자에게 금액을 입력 받아서 부를 수 있는 노래 곡 수와 잔돈을 출력하기
+        // 1600 --> 부를 수 있는 노래는 5곡, 잔돈 100원
+        // let coin = Number(prompt('금액을 입력하세요.'));
+        // const price = 300;
+        // let songCnt = parseInt(coin / price);
+        // let rest = coin % price;        
+        // document.write('<h2>노래방에서 부를 수 있는 곡은 다음과 같습니다.</h2>');
+        // document.write('<h3>부를 수 있는 노래 : ' + songCnt + '곡</h3>');
+        // document.write('<h3>잔돈 : ' + rest + '원</h3>');    
+
+        // 사용자에게 국어점수, 영어점수, 수학점수를 입력받아서 평균 점수 출력하기
+        let kor = Number(prompt('국어 점수를 입력하세요'));
+        let eng = Number(prompt('영어 점수를 입력하세요'));
+        let math = Number(prompt('수학 점수를 입력하세요'));
+        let avg = (kor + eng + math) / 3
+        document.write('<h2>국어, 영어, 수학 점수의 평균 값은 다음과 같습니다.</h2>');
+        document.write('<h3>평균 점수 : ' + avg + '</h3>');
+
+
+    </script>
+    
+</body>
+</html>

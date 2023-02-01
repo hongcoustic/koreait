@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>함수를 변수에 대입</h2>
+
+  <script>
+    let res1 = add1(10, 20);  // add1(10, 20) 의 함수 사용결과 값은 30이 된다.
+    console.log(`res1 : ${res1}`);
+
+    console.log('-------------------------------');
+
+    let res2 = add1;  // res2 에 add1 함수 사용 결과 값을 대입하는 것이 아닌,
+    // res2 가 add1 과 똑같은 함수가 된다. (add1 함수 자체를 res2에 복사)
+    console.log(`res2 : ${res2}`);
+    res2(50, 100);  // add1(50, 100); 과 같은 함수 사용 결과 출력
+
+    console.log('-------------------------------');
+
+    let res3 = res2(50, 100);  // res2 함수 사용 결과 값을 대입.
+    console.log(`res3 : ${res3}`);
+
+    console.log('-------------------------------');
+
+
+    function add1(a, b) {
+      console.log(`a : ${a}`);
+      console.log(`b : ${b}`);
+      return a + b; // 함수 사용 결과 값을 a + b 로 return.
+
+    };
+
+    function smaller(num1, num2) {
+      if (num2 > num1) {
+        console.log(`더 작은 값은 num1 에 있는 ${num1} 입니다.`);
+      }
+      else if (num1 > num2) {
+        console.log(`더 작은 값은 num2 에 있는 ${num2} 입니다.`);
+      }
+      else {
+        console.log('두 수가 서로 같습니다.')
+      }
+    };
+
+    function bigger(num1, num2) {
+      if (num1 > num2) {
+        console.log(`더 큰 값은 num1 에 있는 ${num1} 입니다.`);
+      }
+      else if (num2 > num1) {
+        console.log(`더 큰 값은 num2 에 있는 ${num2} 입니다.`);
+      }
+      else {
+        console.log(`두 수가 서로 같습니다.`)
+      }
+    };
+
+    f(smaller, 10, 20);
+    console.log('-------------------------------');
+    f(bigger, 10, 20);
+
+    function f(key, a, b) {
+      key(a, b);
+    };
+
+
+    // 아래 f1, f2 함수 동작 이해 못했음(1/30), 복습 시 체크
+    let ar = [2, 5, 1, 10, 3];
+    console.log(ar);
+    ar.sort((a, b) => b - a);  // 기존 f2 함수 대신, 익명함수로 넘겨주어 사용
+    console.log(ar);
+
+    // function f2(a, b) {
+    //   return b - a;
+    // };
+
+    function f1(a, b) {
+      if (a > b) {
+        return 1;
+      }
+      else if (b > a) {
+        return -1;
+      }
+      else {
+        return 0;
+      }
+    };
+
+    console.log('-------------------------------');
+
+    // 익명 함수, 이름없는 함수 (일회성으로만 사용)
+    (function (a, b) {
+      console.log('이름 없는 함수 실행됨');
+      console.log(`a : ${a}`);
+      console.log(`b : ${b}`);
+      return a + b;
+
+    }(10, 20));
+
+    console.log('-------------------------------');
+
+    // 익명 함수를 test 변수에 대입
+    let test = function (a, b) {
+      console.log('익명 함수 2')
+      console.log(`a : ${a}`);
+      console.log(`b : ${b}`);
+    };
+    test(10, 20);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <h1>자바스크립트 변수</h1>
+    <script>
+        var name; // name 이라는 변수를 선언, 선언부에 사용되어 '저장공간'으로 해석한다.
+        name = '양홍민'; // name 이라는 변수가 대입 연산자 왼쪽에 쓰여 있기 때문에 '저장공간'으로 해석한다.
+        console.log(name); // name 이라는 변수를 저장된 '값'으로 치환하여 해석한다.
+        console.log(name + 20); // 저장된 값으로 치환
+
+        // console.log(age); 
+        // 위처럼 선언되지 않은 변수(age) 는 저장된 값으로 치환하여 사용할 수 없다.
+
+        var age;
+        // 변수 속에 값을 대입한 적이 없다면 undefined
+        console.log(age);
+        age = 20;
+        console.log(age);
+
+        // 호이스팅
+        // 변수는 이미 실행 전에 만들어지기 때문에 오류가 아니라, undefined 결과가 나타난다.
+        console.log(price);
+
+        // 변수 선언과 동시에 값을 대입하기
+        var price = 2000;
+        console.log(price);
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Method</title>
+</head>
+<body>
+    <h2>배열 메소드</h2>
+    <script>
+        let scores = [80, 50, 90];
+        // 인덱스 번호가 0~2        
+        console.log(scores);    // expected output : [80, 50, 90]
+
+        // 요소 추가
+        scores[3] = 100;
+        console.log(scores);    // expected output : [80, 50, 90, 100]
+
+        let cnt = scores.push(77);
+        console.log(scores);    // expected output : [80, 50, 90, 100, 77]
+        console.log(cnt);   // expected output : 5
+
+        // pop() : 마지막 요소 삭제 
+        // 함수 사용 결과는 삭제된 요소
+        let result = scores.pop();
+        console.log(scores);    // expected output : [80, 50, 90, 100]
+        console.log(result);    // expected output : 77
+
+        // shift() : 첫번째(맨 앞) 요소 삭제 
+        // 함수 사용 결과는 삭제된 요소
+        let result2 = scores.shift();
+        console.log(scores);    // expected output : [50, 90, 100]
+        console.log(result2);   // expected output : 80
+
+        // splice() : 중간 요소 삭제
+        // 함수 사용 결과는 삭제된 요소들이 있는 리스트
+        let result3 = scores.splice(1, 2);
+        console.log(scores);    // expected output : 50
+        console.log(result3);
+
+
+
+        // 참고 : 함수 사용 결과가 값이 아닌 경우에는 undefined
+        // let a = console.log('안녕');
+        // console.log(a);  // expected output : undefined
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+</head>
+<body>
+    <h1>삼항 연산자</h1>
+
+    <script>
+        // console.log(false ? '안녕' : 10);
+
+        // //사용자에게 나이를 입력받고, 성인이라면 '성인입니다.'
+        // //미성년자라면 '미성년자 입니다.' 출력하기
+
+        // let age = Number(prompt('나이 입력'));
+        // document.write(age > 19 ? '성인 입니다.' : '미성년자 입니다.');
+
+
+        //1. 사용자에게 정수를 두개 입력 받아서 둘중 더 큰 수와 두 수의 차 출력하기
+        // let num1 = Number(prompt('첫번째 숫자를 입력하세요'));
+        // let num2 = Number(prompt('두번째 숫자를 입력하세요'));
+        
+        // document.write('더 큰 수는 : ');
+        // document.write(num1 > num2 ? num1 : num2);
+        
+        // document.write('<br>두 수의 차 : ');
+        // document.write(num1 > num2 ? num1-num2 : num2-num1);
+        
+        //2. 사용자에게 나이를 입력 받아서 나이가 10세 이상, 20세 이하라면 500원
+        // 그 외의 나이라면 무료 라고 출력
+        // let age = Number(prompt('나이를 입력하세요'));
+        // document.write(age<10 || age>20 ? '무료 입니다.' : '500원');      
+
+        //3. 사용자에게 키와 나이를 입력 받아서
+        // 150cm 이상, 8살 이상이라면 놀이기구 탑승 가능
+        // 그렇지 않다면 놀이기구 탑승 불가능 출력 하기
+        // let tall = Number(prompt('키를 입력하세요'));
+        // let age = Number(prompt('나이를 입력하세요'));
+        // document.write(tall >= 150 && age >= 8 ? '탑승 가능' : '탑승 불가능');
+
+        //4. 한 상자당 20개의 라면이 들어간다, 사용자에게 라면의 갯수를 입력 받아서
+        //필요한 상자의 갯수를 출력하기
+        let cnt = Number(prompt('라면 갯수를 입력하세요'));
+        const ea = 20;
+        let box = Math.ceil(cnt/ea);
+        document.write('필요한 박스 갯수는 ' + box + '개 입니다.');
+
+
+
+
+    </script>
+</body>
+</html>

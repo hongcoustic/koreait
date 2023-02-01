@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산술연산자</title>
+</head>
+<body>
+    <h1>자바스크립트 산술연산자</h1>
+    <script>
+        // typeof 연산자
+        console.log(typeof '안녕');
+        console.log(typeof typeof '15');
+    
+        // 덧셈 연산자
+        // 숫자 + 숫자
+        console.log('--숫자 + 숫자 의 결과--');
+        console.log(10 + 20); // 숫자 + 숫자 --> 숫자
+
+        // 숫자 + 문자
+        console.log('--문자 + 숫자 의 결과--');
+        console.log('안녕' + 10); // 문자열 + 숫자 --> 문자열
+
+        // 숫자 + 문자
+        console.log('--숫자 + 문자 의 결과--');
+        console.log(10 + '안녕'); // 숫자 + 문자열 --> 문자열
+
+        // 문자 + 문자
+        console.log('--숫자 + 문자 의 결과--');
+        console.log('안녕' + '반가워'); // 문자열 + 문자열 --> 문자열
+
+        console.log(10 + 5 + '' + 7);
+
+        // type 15 가 먼저 계산
+        console.log(typeof 15 + 7);
+
+        // 최우선 연산자 ()소괄호가 먼저 계산, 함수의 소괄호와 다르다
+        console.log(typeof (15 + 7));
+            
+        // 뺄셈 연산자
+        // 숫자 + 숫자
+        console.log('--숫자 - 숫자 의 결과--');
+        console.log(5 - 1);
+                
+        // 문자 + 숫자
+        console.log('--문자 - 숫자 의 결과--');
+        console.log('안녕' - 5); // 문자열 + 숫자 --> NaN (Not - a Number)
+        console.log(typeof ('안녕' - 5)); //NaN 은 type 이 number 로 나타난다
+
+        // 문자 + 문자
+        console.log('--문자 - 문자 의 결과--');
+        console.log('안녕' - '반가워'); // 문자열 + 문자열 --> NaN (Not - a Number)
+
+        // 곱셈 연산자
+        // 숫자 * 숫자
+        console.log('--숫자 * 숫자 의 결과--');
+        console.log(5 * 2); // 숫자 * 숫자 --> 숫자
+
+        // 문자 * 숫자
+        console.log('--문자 * 숫자 의 결과--');
+        console.log('안녕' * 3); // 문자열 * 숫자 --> NaN
+
+        // 나누기 연산자
+        // 숫자 / 숫자
+        console.log('--숫자 / 숫자 의 결과--');
+        console.log(10 / 3); // 숫자 * 숫자 --> 숫자
+        console.log(10 / 0); // 결과는 Infinity
+        console.log(typeof Infinity);
+
+        // 나머지 연산자
+        // 숫자 % 숫자
+        console.log('--숫자 % 숫자 의 결과--');
+        console.log(10 % 3); // 숫자 * 숫자 --> 숫자
+                
+
+    </script>
+</body>
+</html>

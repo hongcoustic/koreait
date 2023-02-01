@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 모델 - 1</title>
+</head>
+<style>
+    div{
+        height: 300px;
+        width: 200px;
+        /* display: inline-block; */
+        background: aqua;
+        border: 3px dotted red;
+        /* margin: 10px 20px 30px 40px; */
+        /* 4개 값 입력 시, 순서대로 위부터 시계 방향 */
+
+        /* margin: 10px 20px; */
+        /* 2개 값 입력 시, 순서대로 위/아래, 좌/우 설정 */
+
+        /* margin: 50px; */
+        /* 1개 값 입력 시, 위,아래,좌,우 모두 동일하게 설정 */
+
+        /* margin: 50px 5px 10px; */
+        /* 3개 값 입력 시, 위, 좌/우, 아래 값 순서대로 설정 */
+
+        margin: 10px auto 20px;
+    }
+
+    #div2{
+        border-color:  black;
+        border-style: solid;
+        border-width: 5px;
+    }
+    #div3{
+        border-style: dashed;
+        border-width: 10px 20px 3px;
+    }
+    #div4{
+        border-style: double;
+        border-width: 10px;
+    }
+    #div5{
+        border-top-width: 10px;
+    }
+
+</style>
+<body>
+    <h2>display 속성</h2>
+    <div id="div1">
+        div 태그 1
+    </div>
+    <div id="div2">
+        div 태그 2
+    </div>
+    <div id="div3">
+        div 태그 3
+    </div>
+    <div id="div4">
+        div 태그 4
+    </div>
+    <div id="div5">
+        div 태그 5
+    </div>
+</body>
+</html>

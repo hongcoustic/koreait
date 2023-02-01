@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 속성</title>
+    <style>
+        #box1{
+            background: gold;
+            padding: 20px;
+            margin-right: 20px;
+            float: left;
+            /* float 속성은 inline 처럼 콘텐츠 크기만큼 가로 세로를 자동으로 차지 함 */
+        }
+        #box2{
+            background: aqua;
+            padding: 20px;
+            margin-right: 20px;
+            float: left;
+        }
+        #box3{
+            background: deeppink;
+            padding: 20px;
+            float: right;
+            margin-left: 20px;
+        }
+        #box4{
+            background: purple;
+            padding: 20px;
+            float: right;
+        }
+        #contents{
+            clear: both;
+            /* 다른 float 속성이 포함된 요소의 영향을 받지 않음, 보통 float 과 함께 사용됨 */
+            width: 80%;
+            height: 500px;
+            background: aquamarine;
+            margin: 0 auto;
+            /* 위, 아래 여백 없이 좌우 여백 자동 */
+        }
+    </style>
+</head>
+<body>
+    <h2>float 속성</h2>
+    <div id="box1">박스-1</div>
+    <div id="box2">박스-2</div>
+    <div id="box3">박스-3</div>
+    <div id="box4">박스-4</div>
+    <div id="contents">
+        <h2>실질적인 웹사이트 내용물</h2>
+        <p>Korea Newswire is the leading provider of press release distribution service in Korea. We help companies and PR agencies disseminate their news releases to thousands of news media, Internet portals around the world.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 우선순위</title>
+    <style>
+        #div1 {
+            background-color: blue !important;
+        }
+
+        #div3 {
+            background-color: blueviolet;
+        }
+
+        .box {
+            background-color: aqua;
+        }
+
+        div {
+            height: 50px;
+            margin-bottom: 20px;
+            border: 3px solid black;
+            background-color: antiquewhite;
+        }
+
+        .test {
+            background-color: red;
+        }
+
+        ul {
+            background-color: aqua;
+        }
+
+        ul > li.li-class {
+            background-color: black;
+            color: white;
+        }
+
+        ul > li {
+            background-color: brown;
+        }
+
+        li {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1" class="box" style="background-color: beige;">div 1번(!important는 가장 우선순위가 높다)</div>
+    <div id="div2" class="box" style="background-color: aquamarine;">div 2번(inline-style 적용)</div>
+    <div id="div3" class="box">div 3번(id 선택자 적용)</div>
+    <div id="div4" class="box">div 4번(class 선택자 적용)</div>
+    <div id="div5">div 5번(태그 선택자 적용)</div>
+    <div class="box test">div 6번(우선순위가 같은 경우, 스타일 시트에서 마지막에 작성된 스타일 적용)</div>
+
+    <ul>
+        <!-- 선택자가 구체적일수록 우선순위를 가져간다 -->
+        <li class="li-class">ul 태그 안에 있는 li 태그</li>
+    </ul>
+</body>
+
+</html>

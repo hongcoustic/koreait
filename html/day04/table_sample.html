@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Table_테이블 태그 활용 과제</title>
+    <style>
+        table{
+            margin:auto;
+        }
+        td{
+            text-align: center;
+            font-size: 12px;
+        }
+        tr{
+            height: 34px;        
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table border="1" width="1500">
+            <caption>
+                <h2>Design Price Table</h2>
+            </caption>
+            <colgroup>
+                <col width="200" style="background-color: rgb(211, 207, 207); color:black;">
+                <col width="350">
+                <col width="150">
+                <col width="300">
+                <col width="300">
+                <col width="300">
+            </colgroup>
+            <!-- 가격표 타이틀 -->
+            <tr style="background-color: black; color:white;">
+                <th rowspan="2">SERVICE</th>
+                <th>WORK SCOPE</th>
+                <th>PRICE</th>
+                <th>기업형</th>
+                <th>제품형</th>
+                <th>브랜드형</th>
+            </tr>
+            <tr style="background-color: rgb(211, 207, 207); color:black;">
+                <th>PIC</th>
+                <th></th>
+                <th>PM/AD</th>
+                <th>CD/PL/AD</th>
+                <th>CD/PL/PM/AD</th>
+            </tr>
+            <!-- 브랜드 컨설팅 항목 시작, 3행 -->
+            <tr>
+                <th rowspan="3">BRAND<br>CONSULTING</th>
+                <td>Research & Analyze</td>
+                <td>3,000만원</td>
+                <td>-</td>
+                <td>-</td>
+                <td>시장조사 & 분석</td>
+            </tr>
+            <tr>
+                <td>Brand Concept</td>
+                <td>3,000만원</td>
+                <td>-</td>
+                <td>브랜드 컨셉 기획</td>
+                <td>브랜드 컨셉 기획</td>
+            </tr>
+            <tr>
+                <td>Marketing Consulting</td>
+                <td>8,000만원</td>
+                <td>-</td>
+                <td>-</td>
+                <td>IMC 마케팅 기획</td>
+            </tr>
+            <!-- 브랜딩 항목 시작, 6행-->
+            <tr>
+                <th rowspan="6">BRANDING</th>
+                <td>Naming</td>
+                <td>2,000만원</td>
+                <td>-</td>
+                <td>-</td>
+                <td>네이밍 기획</td>
+            </tr>
+            <tr>
+                <td>Brand Story</td>
+                <td>2,000만원</td>
+                <td>브랜드 스토리</td>
+                <td>브랜드 스토리</td>
+                <td>브랜드 스토리</td>
+            </tr>
+            <tr>
+                <td>Brand DNA</td>
+                <td>2,000만원</td>
+                <td>브랜드 DNA</td>
+                <td>브랜드 DNA</td>
+                <td>브랜드 DNA</td>
+            </tr>
+            <tr>
+                <td>BX or C.I.P</td>
+                <td>3,000-5,000만원</td>
+                <td>C.I.P(1Group)</td>
+                <td>BX</td>
+                <td>BX</td>
+            </tr>
+            <tr>
+                <td>Visual Asset system</td>
+                <td>2,000만원</td>
+                <td>-</td>
+                <td>키비주얼 에셋</td>
+                <td>키비주얼 에셋</td>
+            </tr>
+            <tr>
+                <td>Package Design</td>
+                <td>2,500만원</td>
+                <td>-</td>
+                <td>패키지 3 sku</td>
+                <td>패키지 5 sku</td>
+            </tr>
+            <!-- 컨텐츠 항목 시작, 8행 -->
+            <tr>
+                <th rowspan="8">CONTENTS</th>
+                <td>Contents Planing &<br>Copywriting</td>
+                <td>1,000만원</td>
+                <td>컨텐츠 기획 & 카피라이팅</td>
+                <td>컨텐츠 기획 & 카피라이팅</td>
+                <td>컨텐츠 기획 & 카피라이팅</td>
+            </tr>
+            <tr>
+                <td>UI/UX Design</td>
+                <td>1,000만원</td>
+                <td>웹사이트 제작</td>
+                <td>웹사이트 제작</td>
+                <td>웹사이트 제작</td>
+            </tr>
+            <tr>
+                <td>Detail Page Design</td>
+                <td>300만원</td>
+                <td>-</td>
+                <td>상세페이지 3ea</td>
+                <td>상세페이지 5ea</td>
+            </tr>
+            <tr>
+                <td>Film Planning & Operationg</td>
+                <td>2,000만원</td>
+                <td>브랜드 스토리</td>
+                <td>브랜드 스토리</td>
+                <td>브랜드 스토리</td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>300만원</td>
+                <td>1Day</td>
+                <td>2Day</td>
+                <td>3Day</td>
+            </tr>
+            <tr>
+                <td>Brand Film</td>
+                <td>1,000만원</td>
+                <td>영상 1ea</td>
+                <td>영상 1ea + Gif 6ea</td>
+                <td>영상 1ea + Gif 10ea</td>
+            </tr>
+            <tr>
+                <td>Image Lisence</td>
+                <td>500만원</td>
+                <td>이미지 라이센스</td>
+                <td>이미지 라이센스</td>
+                <td>이미지 라이센스</td>
+            </tr>
+            <tr>
+                <td>SNS Contents</td>
+                <td>1,000만원</td>
+                <td>-</td>
+                <td>-</td>
+                <td>인스타그램 피드 기획 및 제작</td>
+            </tr>    
+                
+        </table>
+        <!-- 가격표 선택 고객문의 입력 -->
+        <table width="1500">
+            <colgroup>
+                <col width="200">
+                <col width="350">
+                <col width="150">
+                <col width="300">
+                <col width="300">
+                <col width="300">
+            </colgroup>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                            <input type="radio" name="pricetype" checked> 
+                    </td>
+                    <td>
+                            <input type="radio" name="pricetype"> 
+                    </td>
+                    <td>
+                            <input type="radio" name="pricetype"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="text-align: right;">
+                        <br>              
+                        성함 : <input type="text" required>
+                        이메일 : <input type="email" required>
+                        <br><br>
+                        연락처 : 
+                        <select name="phone">
+                            <option>02</option>
+                            <option>070</option>
+                            <option>010</option>
+                        </select>
+                        <input type="tel" name="phone">
+                        <input type="tel" name="phone">
+                        <br><br>
+                        <textarea placeholder="문의사항을 입력하세요" style="resize: none;"></textarea>
+                        <br>
+                        <input type="submit">
+                        <input type="reset">
+                    </td>
+                </tr>
+
+    </form>
+    
+</body>
+</html>

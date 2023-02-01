@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-속성2</title>
+  <style>
+    .flex-container{
+      width: 70%;
+      height: 400px;
+      background: #e9e9e9;
+      border: 3px solid black;
+      /* padding: 20px; */
+      box-sizing: border-box;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row nowrap;
+    }
+    .flex-container div{
+      /* width: 50px;
+      height: 30px; */
+      /* background: aqua; */
+      box-sizing: border-box;
+      border: 2px dotted red;
+      /* margin: 10px; */
+    }
+
+    #container1{
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+    #container2{
+      justify-content: flex-end;
+      align-items: center;
+    }
+    #container3{
+      justify-content: center;
+      align-items: baseline;
+    }
+    #container4{
+      justify-content: space-between;
+      align-items: stretch;
+      /* box1,2,3은 사이즈 고정시켜두어 적용안됨, box4 는 크기값을 주지않아 교차축이 부모값만큼 늘어남 */
+    }
+    #container5{
+      justify-content: space-around;
+    }
+    #container6{
+      justify-content: space-evenly;
+    }
+    .box1 {height: 100px; width: 200px;}
+    .box2 {height: 200px; width: 200px;}
+    .box3 {height: 300px; width: 300px; font-size: 30px;}
+    /* flex는 배열 방법을 지시하기 때문에 자식의 크기 속성을 무시한다 */
+
+    #box-start{
+      align-self: flex-start;
+    }
+  </style>
+</head>
+<body>
+  <h2>flex-start</h2>
+  <div id="container1" class="flex-container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+  <h2>flex-end</h2>
+  <div id="container2" class="flex-container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div id="box-start" class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+  <h2>center</h2>
+  <div id="container3" class="flex-container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+  <h2>space-between</h2>
+  <div id="container4" class="flex-container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+  <h2>space-around</h2>
+  <div id="container5" class="flex-container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+  <h2>space-evenly</h2>
+  <div id="container6" class="flex-container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+  </div>
+</body>
+</html>

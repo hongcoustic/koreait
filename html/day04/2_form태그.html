@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 태그</title>
+</head>
+
+<body>
+  <h2>상품을 주문하세요</h2>
+  <h3>상품 정보 : 제주 감귤</h3>
+  <table border="1">
+    <tr>
+      <th>구분</th>
+      <th>내용</th>
+      <th>가격</th>
+    </tr>
+    <tr>
+      <td>1인용</td>
+      <td>5kg</td>
+      <td>10,000원</td>
+    </tr>
+    <tr>
+      <td>가족용</td>
+      <td>15kg</td>
+      <td>28,000원</td>
+    </tr>
+    <tr>
+      <td>선물용</td>
+      <td>20g</td>
+      <td>50,000원</td>
+    </tr>
+  </table>
+  <form action="">
+    <fieldset>
+      <legend>사용자 정보</legend>
+      <label>주문자 성함: <input type="text" required placeholder="주문자 성함"></label>
+      <br>
+      <label>배송지: <input type="text"></label>
+      <br>
+      <label>이메일: <input type="text">@
+        <input type="text" list="domain_list">
+        <datalist id="domain_list">
+          <!-- <optgroup label="한국"> -->
+          <option>naver.com</option>
+          <option>hanmail.net</option>
+          <!-- </optgroup> -->
+        </datalist>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>물품 정보</legend>
+      <label>요청사항 : <input type="text" size="10"></label>
+      <br>
+      <label>희망배송일선택 : <input type="date"></label>
+      <br>
+      <label><input type="radio" name="pr_list">1인용</label>
+      <label><input type="radio" name="pr_list">가족용</label>
+      <label><input type="radio" name="pr_list">선물용</label>
+      <br>
+      <input type="hidden">
+    </fieldset>
+
+    <button type="submit">전송</button>
+    <button type="reset">다시 입력하기</button>
+    <button type="button">특정 기능을 하는 버튼</button>
+    <br>
+    <input type="number" step="5">
+
+    <input type="submit">
+    <input type="reset">
+
+  </form>
+
+</body>
+
+</html>

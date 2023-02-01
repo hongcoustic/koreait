@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 속성</title>
+    <style>
+        #letter {
+            letter-spacing: 20px;
+        }
+
+        #word {
+            word-spacing: 10px;
+        }
+
+        #left {
+            text-align: left;
+        }
+
+        #center {
+            text-align: center;
+        }
+
+        #right {
+            text-align: right;
+        }
+
+        #justify {
+            text-align: justify;
+        }
+
+        .indent1 {
+            text-indent: 20px;
+            color: #4d75c086;
+        }
+
+        .indent2 {
+            color: rgb(250, 15, 27);
+            text-indent: 10%;
+        }
+
+        p {
+            border: 3px dotted red;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        #small-line {
+            line-height: 1.7;
+        }
+
+        #big-line {
+            line-height: 3;
+        }
+
+        #pixel-line {
+            line-height: 20px;
+        }
+
+        #per-line {
+            line-height: 70%;
+        }
+        
+        .under{
+            text-decoration: underline;
+        }
+        .through{
+            text-decoration: line-through;
+        }
+        .over{
+            text-decoration: overline;
+        }
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>CSS 텍스트 속성</h2>
+    <p id="letter">letter-spacing 속성은 글자 간격을 조정합니다.</p>
+    <p id="word">word-spacing 속성은 단어 간격을 조정합니다.</p>
+    <br>
+
+    <h3>text-align</h3>
+    <p id="left">text-align 속성은 left 라는 속성값을 줄 수 있습니다.</p>
+    <p id="center">text-align 속성은 center 라는 속성값을 줄 수 있습니다.</p>
+    <p id="right">text-align 속성은 right 라는 속성값을 줄 수 있습니다.</p>
+    <p id="justify">text-align 속성은 justify 라는 속성값을 줄 수 있습니다.</p>
+    <p class="indent1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur quae consequatur dignissimos
+        voluptatum iste, quaerat sunt sit repellat at optio totam debitis quod quo provident consequuntur beatae odit
+        nisi culpa?</p>
+    <p class="indent2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis iure laborum doloremque
+        consequuntur quos quo accusantium in minima numquam ratione cupiditate, accusamus sapiente, saepe iusto
+        molestias, tenetur ab quibusdam tempora.</p>
+    <br>
+
+    <h3>line-height</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo corrupti eos tempora suscipit labore. Velit
+        pariatur aut enim laboriosam dolores. Mollitia fugiat quos distinctio voluptas minus pariatur recusandae ea.
+        Eligendi.</p>
+    <p id="small-line">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate minus fugit quas voluptas
+        obcaecati facilis cupiditate, numquam optio debitis, delectus vitae distinctio sequi. Voluptatem, nulla
+        doloribus non repellat asperiores sit.</p>
+    <p id="big-line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem optio velit debitis ducimus, dolores
+        error voluptas consequuntur quae vitae accusantium doloribus ratione pariatur sequi esse aut nisi et tempora.
+        Saepe!</p>
+    <p id="px-line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quos neque ipsam repellendus
+        distinctio ullam quaerat, eius soluta enim accusamus delectus itaque. Beatae id aliquid facere placeat iure
+        suscipit sapiente?</p>
+    <p id="per-line">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem ipsum iusto deserunt et
+        veritatis fugiat voluptatibus porro. Reiciendis, cumque explicabo! Consequatur quibusdam quos sunt nobis unde
+        quisquam recusandae deserunt id.</p>
+
+    <h3>text-decoration</h3>
+    <p><a href="https://namu.wiki/w/%EB%B0%A5">출처 : 나무위키(밥)</a></p>
+    <p>
+        <span class="under">쌀, 보리, 밀, 조, 기장, 녹두, 수수, 콩, 메밀, 팥, 피, 강냉이 등의
+            곡식 알갱이들을 물에 특정한 방법으로 익혀서 먹는 것</span>을 칭한다. 죽 역시
+        갖은 곡물 알갱이를 물에 익히지만 조리 방법이 다르다. 밥은 죽과 달리 곡식 알갱이의 형태가 유지되며,
+        물과 온도의 조절이 중요하다.
+        <span class="through">정확하게 말하면 곡식을 끓는
+            물에 강한 압력을 넣어 고온, 고압에 익히는 독특한 요리법</span>이다.
+        또한 글루텐화 가공(반죽)을 거치지 않는다는
+        <span class="over">점에서 떡, 빵과도 확연히
+            구분</span>된다.
+    </p>
+
+</body>
+
+</html>

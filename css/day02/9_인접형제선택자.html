@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인접형제 선택자</title>
+  <style>
+    h3~p {
+      /* h3 형제중 모든 p태그에 적용 */
+      color: blue;
+    }
+
+    h3+p {
+      /* h3 바로 다음 형제가 p태그 일 경우 적용 */
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>인접형제 선택자</h2>
+  <div>
+    <h3>첫째 형제</h3>
+    <p>둘째 형제</p>
+    <a href="">셋째 형제</a>
+    <p>넷째 형제</p>
+  </div>
+  <p>다섯째 형제</p>
+
+</body>
+
+</html>

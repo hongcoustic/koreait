@@ -1,0 +1,11 @@
+/* 모든페이지에서 공통으로 사용하는 디자인 요소 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #1c1e21;
+    line-height: 1.34;
+}

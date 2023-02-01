@@ -1,0 +1,203 @@
+/* index.html 화면에서 사용할 디자인 요소 */
+#main {
+    background-color: #f0f2f5;
+    padding: 72px 0 112px;
+}
+
+#contents {
+    width: 990px;
+    margin: 0 auto;
+    border: 20px 0;
+}
+
+#content1 {
+    display: inline-block;
+    width: 580px;
+    box-sizing: border-box;
+    padding-right: 32px;
+    vertical-align: top;
+}
+
+#content2 {
+    display: inline-block;
+    width: 396px;
+    height: 536px;
+}
+
+#content1 img {
+    height: 106px;
+    margin: -28px;
+    padding: 112px 0 12px;
+}
+
+#content1 h2 {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    width: 500px;
+    padding-bottom: 20px;
+}
+
+#input-form {
+    padding: 10px 0 24px;
+    text-align: center;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    margin-top: 40px;
+    width: 396px;
+    border-radius: 8px;
+}
+
+div.main-input {
+    width: 364px;    
+    padding: 6px 0;
+    text-align: center;
+    margin: auto;
+}
+
+div.main-input input {
+    border-radius: 6px;
+    padding: 14px 16px;
+    width: 330px;
+    border: 1px solid #dddfe2;
+
+    font-size: 17px;
+    color: #1d2129;    
+}
+/* input 이 포커스 되었을때 적용시킬 스타일 */
+div.main-input input:focus{
+    border-color: #1b74e4;
+    box-shadow: 0 0 0 2px #e7f3ff;
+    outline: none;
+}
+
+div.main-input input:focus::placeholder{
+    color: rgba(128.128.128.55);
+}
+
+/* 로그인 버튼 디자인 */
+#login {
+    margin-top: 6px;
+    font-size: 20px;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 332px;
+    color: #fff;
+    cursor: pointer;
+    box-sizing: content-box;
+    font-weight: bold;
+}
+
+#login:hover {
+    background-color: #166fe5;
+}
+
+#forget-pw {
+    margin-top: 16px;
+    
+}
+
+/* 비밀번호 찾기 text */
+#forget-pw a {
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* a 마우스 호버, 언더라인 삽입 */
+a:hover{
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* 회원가입 라인 */
+.line{
+    border-bottom: 1px solid #dadde1;
+    margin: 20px 16px;
+}
+
+/* 새 계정 만들기 버튼 디자인 */
+#new_account{
+    padding-top: 6px;
+}
+
+#new_account button{
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    padding: 0 16px;
+
+    background-color: #42b72a;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 새 계정 만들기 마우스 호버*/
+
+#new_account button:hover{
+    background-color: #36a420;
+}
+
+/* 비즈니스 페이지 만들기 text */
+#reg_pages_msg{
+    font-size: 14px;
+    font-weight: normal;
+    padding-top: 0;
+    color: #1c1e21;
+    margin-top: 28px;
+    text-align: center;
+}
+
+#reg_pages_msg a{
+    color: inherit;
+    font-weight: bold;
+}
+
+/* footer */
+
+#page-footer{
+    width: 990px;
+    margin: 0 auto;
+    color: #737373;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+#page-footer a{
+    color: #737373;
+}
+
+#page-footer ul{
+    padding-top: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+#page-footer .line{
+    margin: 2px 0 8px;
+}
+
+#page-footer ul:first-child li{
+    padding-right: 10px;
+}
+
+#page-footer ul:nth-child(3) li{
+    padding-right: 20px;
+}
+
+
+.copyright{
+    font-size: 11px;
+    margin: 20px 0;
+}

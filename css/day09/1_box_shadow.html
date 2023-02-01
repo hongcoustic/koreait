@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상자 그림자</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: beige;
+            margin: 20px auto;
+        }
+
+        div.box1{
+            box-shadow: 5px 10px inset;
+        }
+
+        div.box2{
+            box-shadow: 5px 10px aqua;
+        }
+
+        div.box3{
+            box-shadow: 5px 10px 10px aqua;
+        }
+
+        div.box4{
+            box-shadow: 5px 10px 10px 10px aqua, 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+</body>
+</html>

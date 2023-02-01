@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 레이아웃</title>
+    <style>
+        #container  div{
+            box-sizing: border-box;
+            width: 400px;
+            border: 1px solid black;
+            background: #e9e9e9;
+            /* height: 200px; */
+        }
+        /* h1{
+            font-size: 50px;
+            font-weight: bold;
+            padding: 20px;
+            margin: 0;
+        } */
+        .box1{
+            font-size: 50px
+        }
+        .box2{
+            font: normal normal bold 80px normal inherit;
+        }
+        #container{
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            border: 3px solid red;
+            display: flex;
+            /* flex-flow: column; */
+            /* flex-wrap: wrap-reverse; */
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h2>flex 레이아웃</h2>
+    <div id="container">
+        <div id="box1"><h1 class="box1">1</h1></div>
+        <div id="box2"><h1 class="box2">2</h1></div>
+        <div id="box3"><h1 class="box3">3</h1></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+
+        #box1 {
+            background-color: aqua;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션 종료 모양 유지, backwords 는 기본값이며 종료시 원래 모양 유지 */
+            animation-fill-mode: forwards;
+            /* 애니메이션 동작 반복 설정, 숫자값은 횟수 반복, infinite 무한 반복 */
+            animation-iteration-count: infinite;
+        }
+
+        #box2 {
+            background-color: aquamarine;
+            animation-name: shape;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        #box3 { 
+            background-color: blueviolet;
+            /* animation 단축속성, animation-name 과 animation-duration 은 필수 */
+            animation: rotate 3s infinite alternate;
+        }
+
+        @keyframes moving {
+            /* 애니메이션 시작 모양 설정, from 대신 0% 로 표현 가능 */
+            from {
+                width: 200px;
+                background-color: gold;
+                opacity: 0.5;
+                transform: scale(0.5) rotate(30deg);
+            }
+
+            /* 중간(50%) 지점 모양 설정, 지점별로 동작 추가 가능 */
+            50% {
+                width: 300px;
+                background-color: beige;
+                transform: rotate(-30deg);
+            }
+
+            /* 애니메이션 종료 모양 설정, to 대신 100% 로 표현 가능 */
+            to {
+                width: 400px;
+                background-color: red;
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes shape {
+            /* 시작점은 생략 가능, 생략 시에는 기본값부터 진행 */
+            100% {
+                border-radius: 50%;
+
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg)
+            }
+            10% {
+                transform: rotate(-20deg)
+            }
+            70% {
+                transform: rotate(70deg)
+            }
+            100% {
+                transform: rotate(30deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+</body>
+</html>

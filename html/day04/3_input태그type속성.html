@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input type 속성 차이</title>
+</head>
+<body>
+  <form>
+    <label>text: <input type="text"></label>
+    <br>
+    <label>password: <input type="password"></label>
+    <br>
+    <label>search: <input type="search"></label>
+    <br>
+    <label>email: <input type="email"></label>
+    <br>
+    <label>number: <input type="number"></label>
+    <br>
+    <label>color: <input type="color"></label>
+    <br>
+    <label>file: <input type="file"></label>
+    <br>
+    <label>tel: <input type="tel"></label>
+    <br>
+    <!-- label 로 묶어주지 않아, '남성' 문자(텍스트) 클릭 시 셀렉되지 않음 -->
+    <!-- name 속성을 통해 gender 라는 그룹으로 묶어 그룹내 중복 선택 불가 -->
+    남성<input type="radio" name="gender">
+    <!-- checked 속성으로 미리 체크가 되어 있게 표현 -->
+    <label>여성<input type="radio" name="gender" checked></label>
+    <br>
+    <!-- name 속성을 통해 입력값이 하나의 그룹임을 표시 -->
+    <label>한식 <input type="checkbox" name="foodtype"></label>
+    <label>일식 <input type="checkbox" name="foodtype"></label>
+    <label>양식 <input type="checkbox" name="foodtype"></label>
+    <label>중식 <input type="checkbox" name="foodtype"></label>
+    <br>
+    <textarea placeholder="요청사항을 입력하세요" readonly style="resize: none;">배송은 하루 전날에만 가능합니다.</textarea>
+    <br>
+    <select>
+      <option>학생</option>
+      <option>직장인</option>
+      <option>프리랜서</option>
+    </select>
+    <br>
+    <select>
+      <optgroup label="경기도">
+        <option>수원시</option>
+        <option>화성시시</option>
+        <option>의왕시</option>
+      </optgroup>
+      <optgroup label="서울특별시">
+        <option>강남구</option>
+        <option>서초구</option>
+        <option>송파구</option>
+      </optgroup>
+    </select>
+    <br>
+    <!-- 휴대전화 입력 필드 연습 -->
+    <select >
+      <option>010</option>
+      <option>011</option>
+      <option>070</option>
+    </select>
+    <input type="number">
+    <input type="number">
+
+    <br>
+    <br>
+    <br>
+    <input type="submit">
+    <input type="reset">
+  </form>
+  
+</body>
+</html>

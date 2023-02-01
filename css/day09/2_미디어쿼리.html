@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <style>
+        div{
+            width: 800px;
+            height: 500px;
+            background-color: aqua;
+        }
+
+        @media screen and (min-width:1024px){
+            div{
+                background-color: beige;
+                width: 700px;
+            }
+        }
+
+        @media screen and (min-width:900px) and (max-width:1024px){
+            div{
+                background-color: darkblue;
+                width: 500px;
+            }
+        }
+
+        @media screen and (max-width:900px){
+            div{
+                background-color: green;
+                height: 100px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>div 태그 입니다.</div>
+</body>
+</html>

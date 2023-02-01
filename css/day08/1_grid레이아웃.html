@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 레이아웃</title>
+    <style>
+        #container {
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas:
+                "box1 box1 box1"
+                "box2 box3 box3"
+                "box2 . box4";
+                /* 빈 공간은 점(.)으로 표기한다 */
+        }
+
+        .box1 {
+            grid-area: box1;
+            background-color: antiquewhite;
+
+        }
+
+        .box2 {
+            grid-area: box2;
+            background-color: aqua;
+        }
+
+        .box3 {
+            grid-area: box3;
+            background-color: beige;
+        }
+
+        .box4 {
+            grid-area: box4;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+    </div>
+</body>
+
+</html>

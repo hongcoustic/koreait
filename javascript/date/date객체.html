@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./date객체.css">
+</head>
+
+<body>
+  <h2>
+    javascript Date 객체
+  </h2>
+  <div class="tab">
+    <ul class="tabnav">
+      <li data-tab="tab01" class="tabs current">기념일 계산</li>
+      <li data-tab="tab02" class="tabs">D-day 계산</li>
+      <li data-tab="tab03" class="tabs">전역일 계산</li>
+    </ul>
+    <div class="contents">
+
+      <div id="tab01" class="tabcontents current">
+        <div class="tabwrap">
+          <div>
+            <h3>우리의 기념일 계산하기</h3>
+            <p>만난 날을 입력해주세요</p>
+          </div>
+          <form action="">
+            <div class="input-div">
+              <label for="year">년도</label>
+              <input type="text" name="" id="year">
+            </div>
+            <div class="input-div">
+              <label for="year">월</label>
+              <input type="text" name="" id="month">
+            </div>
+            <div class="input-div">
+              <label for="year">일</label>
+              <input type="text" name="" id="date">
+            </div>
+
+          </form>
+          <div id="buttons">
+            <button id="after100">100일 후!</button>
+            <button id="after200">200일 후!</button>
+            <button id="after300">300일 후!</button>
+          </div>
+          <div id="res">
+            이곳에 결과가 나옵니다
+          </div>
+        </div>
+      </div>
+      <div id="tab02" class="tabcontents">
+        <div class="tabwrap">
+          <div>
+            <h3>그 날까지 얼마나 남았을까?</h3>
+            <p>확인하고 싶은 날짜를 입력해주세요!</p>
+          </div>
+          <form action="">
+            <div class="input-div">
+              <label for="year">년도</label>
+              <input type="text" name="" id="year">
+            </div>
+            <div class="input-div">
+              <label for="year">월</label>
+              <input type="text" name="" id="month">
+            </div>
+            <div class="input-div">
+              <label for="year">일</label>
+              <input type="text" name="" id="date">
+            </div>
+
+          </form>
+          <div id="buttons">
+            <button>확인하기</button>
+          </div>
+          <div id="res">
+            이곳에 결과가 나옵니다
+          </div>
+        </div>
+      </div>
+      <div id="tab03" class="tabcontents ">
+        <div class="tabwrap">
+          <div>
+            <h3>전역일 계산하기!</h3>
+            <p>입대 일자를 입력해 주세요!</p>
+          </div>
+          <form action="">
+            <input type="date" id="date">
+            <!-- <div class="input-div">
+              <label for="year">년도</label>
+              <input type="text" name="" id="year">
+            </div>
+            <div class="input-div">
+              <label for="year">월</label>
+              <input type="text" name="" id="year">
+            </div>
+            <div class="input-div">
+              <label for="year">일</label>
+              <input type="text" name="" id="year">
+            </div> -->
+            <br>
+            <input type="radio" name="sol_type" value="0" checked>육군
+            <input type="radio" name="sol_type" value="1">공군
+            <input type="radio" name="sol_type" value="2">해군
+            <input type="radio" name="sol_type" value="3">해병대
+            <input type="radio" name="sol_type" value="4">의병
+          </form>
+          <div id="buttons" onclick="f()">
+            <button>전역일 확인하기</button>
+          </div>
+          <div id="res">
+            이곳에 결과가 나옵니다
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!--tab-->
+
+  <script>
+    let tabs = document.querySelectorAll('.tabs');
+    for (const t of tabs) {
+      t.addEventListener('click', e => {
+        for (const t2 of tabs) {
+          t2.classList.remove('current');
+        }
+        e.target.classList.add('current');
+        let tabcontents = document.querySelectorAll('.tabcontents');
+        for (const tc of tabcontents) {
+          tc.classList.remove('current');
+          if (t.dataset.tab == tc.id) {
+            tc.classList.add('current');
+          }
+        }
+      });
+    }
+
+    // 100일 후 버튼 개별 실행 코드
+    // let btn1 = document.querySelector('#after100');
+    // btn1.addEventListener('click',function(e){
+    //   let year_input = document.querySelector('#year');
+    //   let year = year_input.value;
+    //   let month = document.querySelector('#month').value;
+    //   let date = document.querySelector('#date').value;
+    //   console.log(year);
+    //   console.log(month);
+    //   console.log(date);
+    //   let d = new Date(`${year}-${month}-${date}`);
+    //   console.log(d);
+    //   console.log(d+100);
+
+    //   // getTime() : 1970년1월1일부터 해당 날짜 객체까지의 밀리초가 return
+    //   let res = new Date(d.getTime() + 100 * 24 * 60 * 60 * 1000);
+    //   console.log(res);
+
+    //   let r = document.querySelector('#res').innerHTML = `${res.getFullYear()}년${res.getMonth() + 1}월${res.getDate()}일 입니다.`;
+    // });
+
+
+    // 기념일 계산 스크립트 시작
+    let btn11 = document.querySelectorAll('div#buttons button');
+    let btns = [btn11[0], btn11[1], btn11[2]];
+
+    for (b of btns) {
+
+      b.addEventListener('click', function (e) {
+        // 이벤트 매개변수의 특정 속성을 불러오고(문자열) 해당 문자열을 잘라줌
+        let days = Number(e.target.innerHTML.substr(0, 3));
+
+        let year = document.querySelector('#year').value;
+        let month = document.querySelector('#month').value;
+        let date = document.querySelector('#date').value;
+
+        let target = new Date(`${year}-${month}-${date}`);
+
+
+        let res = new Date(target.getTime() + days * 24 * 60 * 60 * 1000);
+
+        document.querySelector('#res').innerHTML = `${res.getFullYear()}년${res.getMonth() + 1}월${res.getDate()}일 입니다.`
+      });
+    }
+
+    // D-day 계산 스크립트 시작
+    let btn2 = document.querySelector('div#tab02 button');
+    btn2.addEventListener('click', function (e) {
+      let year = document.querySelector('div#tab02 #year').value;
+      let month = document.querySelector('div#tab02 #month').value;
+      let date = document.querySelector('div#tab02 #date').value;
+
+      let target = new Date(`${year}-${month}-${date}`);
+      let today = new Date();
+
+      let res = (target.getTime() - today.getTime()) / 1000 / 60 / 60 / 24;
+
+      document.querySelector('div#tab02 #res').innerHTML = `${Math.ceil(res)} 일 입니다.`;
+
+    });
+
+    // 전역일 계산 스크립트 시작
+    // 전역일   육군    해군    공군    해병대    의경
+    // 이병     2      2      2       2      이경2
+    // 일병     6      6      6       6      일경6
+    // 상병     6      6      6       6      상경6
+    // 병장     4      6      8       4      수경4
+
+    function f() {
+      let solType = document.querySelector('div#tab03 input[type=radio]:checked').value;
+      let target = document.querySelector('div#tab03 #date').value;
+      let start = new Date(target); // start : 입대일
+      let dur = 18; // 기본 복무기간 18개월
+
+      // 계급구하기
+      // 일병 진급 일자
+      let lv2 = new Date(start.getFullYear(), start.getMonth() + 2, start.getDate());
+      // 상병 진급 일자
+      let lv3 = new Date(lv2.getFullYear(), lv2.getMonth() + 6, lv2.getDate());
+      // 병장 진급 일자
+      let lv4 = new Date(lv3.getFullYear(), lv3.getMonth() + 6, lv3.getDate());
+  
+      let now = new Date();
+      let grade = 0;
+      if(now < lv2){
+        grade = (solType == 4) ? '이경' : '이병';
+      }else if(now < lv3){
+        grade = (solType == 4) ? '일경' : '일병';
+      }else if(now < lv4){
+        grade = (solType == 4) ? '상경' : '상병';
+      }else{
+        grade = (solType == 4) ? '수경' : '병장';
+      }
+
+      switch (solType) {
+        case '1': // 공군
+          dur += 2;
+        case '2': // 해군
+          dur += 2;
+      }
+
+      start.setMonth(start.getMonth() + dur);
+      document.querySelector('div#tab03 #res').innerHTML = `현재 계급은 ${grade} 이며, 전역일은 ${start.getFullYear()}년${start.getMonth() + 1}월${start.getDate()}일 입니다.`;
+    }
+
+
+  </script>
+</body>
+
+</html>

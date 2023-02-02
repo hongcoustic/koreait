@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  padding: 10px 10px;
+}
+
+.tab{
+  width: 80%;
+  margin: 0 auto;
+}
+
+h2{
+  text-align: center;
+}
+
+.tabwrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: inherit;
+}
+
+.tabnav li.tabs{
+  padding: 0 20px;
+  list-style: none;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-top: 3px solid black;
+
+}
+
+.tabnav li.tabs:hover{
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.tabnav li.current{
+  border-top: 3px solid violet;
+}
+
+.contents .tabcontents{
+  display: none;
+  border: 1px solid #ccc;
+  min-height: 500px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.contents .tabcontents.current{
+  display: block;
+}
+
+p{
+  margin: 20px;
+}
+
+.input-div{
+  display: inline-flex;
+  flex-direction: column;
+  color: grey;
+  text-align: left;
+  font-size: smaller;
+  margin-bottom: 20px;
+}
+
+#buttons{
+  width: 80%;
+  height: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+#buttons button{
+  padding: 0 20px;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 3px 3px gray;
+}
+
+#buttons button:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}

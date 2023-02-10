@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS 속성 다루기</h2>
+    <div style="color: blue;">
+        div태그 입니다.
+    </div>
+
+    <script>
+        let target = document.getElementsByTagName('div')[0];
+        console.log(target);
+
+        // target.setAttribute('style', 'background-color: red;');
+
+        console.log(target.style.color)
+        target.style.width = '400px'
+        
+        // CSS속성 이름에 - 가 붙은 경우, 대문자로 바꾸는 카멜표기법 활용.
+        target.style.backgroundColor = 'red'
+
+    </script>
+</body>
+
+</html>

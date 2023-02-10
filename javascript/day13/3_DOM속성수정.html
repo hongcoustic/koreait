@@ -13,6 +13,7 @@
         <li>사과</li>
     </ul>
     <div>div 태그 입니다.</div>
+    <img src="./myimg.png" alt="이미지 입니다.">
 
     <script>
         let target = document.querySelector('ul');
@@ -39,6 +40,10 @@
         myDiv.classList.add('div4');
 
         myDiv.id = 'myId';
+
+        let myImg = document.querySelector('img');
+        console.log(myImg);
+        console.log(myImg.getAttribute('src'));
     </script>
 </body>
 </html>

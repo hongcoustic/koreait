@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        img.smallPic {
+            width: 100px;
+            border: 1px solid black;
+
+        }
+
+        img.smallPic:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>이미지 바꾸기</h2>
+    <img src="./daum.png" alt="" class="bigPic">
+    <br>
+    <img src="./daum.png" alt="다음 이미지" class="smallPic"/>
+    <img src="./google.png" alt="구글 이미지" class="smallPic"/>
+
+    <script>
+        let smallPicList = document.querySelectorAll('img.smallPic');
+        console.log(smallPicList);
+
+        // 익명함수이기 때문에 function 대신 => 사용, 매개변수 1개라서 소괄호 생략, 코드 1줄이라서 중괄호 생략
+        smallPicList.forEach(a => a.addEventListener('click', function(e){
+            console.log(e.target.getAttribute('src'));
+
+            let bigPic = document.querySelector('img.bigPic');
+            console.log(bigPic);
+
+            bigPic.setAttribute('src', e.target.getAttribute('src'));
+        
+        }));
+    </script>
+
+</body>
+</html>

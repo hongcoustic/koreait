@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DOM 다루기</h2>
+    <ul class="mylist" id="fruits">
+        <li>바나나</li>
+        <li>사과</li>
+        <li>오렌지</li>
+    </ul>
+    <ul class="mylist2" id="people">
+        <li>김철수</li>
+        <li>홍길동</li>
+    </ul>
+    <ol class="mylist" id="todo">
+        <li>밥먹기</li>
+        <li>잠자기</li>
+    </ol>
+
+    <script>
+        let target = document.querySelector('#fruits');
+        console.log(target);
+
+        let myList = document.querySelectorAll('.mylist');
+        console.log(myList);
+
+        // target.appendChild();
+        let newNode = document.createElement('li');
+        console.log(newNode);
+        let newText = document.createTextNode('추가된 텍스트');
+        console.log(newText);
+
+        newNode.appendChild(newText);
+        console.log(newNode);
+
+        target.appendChild(newNode);
+
+        let target2 = document.querySelector('#people');
+        let newNode2 = document.createElement('li');
+        newNode2.innerText = '추가된 텍스트';
+
+        target2.appendChild(newNode2);
+
+        console.log(newNode2);
+        console.log(newNode2.childNodes);
+
+        let target3 = document.querySelector('#todo');
+        console.log(target3.children[0].innerText);
+
+        console.log(target.innerHTML);
+        target.innerHTML = '<li>안녕</li>'
+        console.log(target);
+        
+    </script>
+</body>
+</html>

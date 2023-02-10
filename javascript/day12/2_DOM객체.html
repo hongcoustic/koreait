@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DOM <span>객체</span> 가져오기</h2>
+    <ul id="fruits" class="list2">
+        과일들
+        <li>바나나</li>
+        <li>사과</li>
+        <li>오렌지</li>
+    </ul>
+    <ul id="people" class="list1" name="myol">
+        이름들 시작
+        <li>홍길동</li>
+        <li>김철수</li>
+    </ul>
+    <ol id="todo" class="list2">
+        할일들
+        <li>밥먹기</li>
+        <li>씻기</li>
+        <li>잠자기</li>
+    </ol>
+
+    <script>
+        let myUl = document.querySelector('ul');
+        console.log(myUl);
+        console.log(myUl.firstChild);
+        console.log(myUl.firstElementChild);
+
+        console.log(myUl.lastChild);
+        console.log(myUl.lastElementChild);
+
+        console.log(myUl.parentNode);
+        console.log(myUl.parentElement);
+
+        console.log(myUl.children);
+        console.log(myUl.childNodes);
+
+        console.log(myUl.nextSibling);
+        console.log(myUl.nextElementSibling);
+
+        console.log(myUl.previousSibling);
+        console.log(myUl.previousElementSibling);
+    </script>
+</body>
+</html>

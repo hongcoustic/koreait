@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DOM 속성 수정</h2>
+    <ul>
+        <li>바나나</li>
+        <li>사과</li>
+    </ul>
+    <div>div 태그 입니다.</div>
+
+    <script>
+        let target = document.querySelector('ul');
+        target.setAttribute('id', 'mylist');
+        target.setAttribute('class', 'li');
+        target.setAttribute('class', 'li2'); // 추가가 아닌, 수정
+        target.setAttribute('class', '');
+        target.setAttribute('class', 'li li02')
+
+        let myDiv = document.querySelector('div');
+        let newAtt = document.createAttribute('class');
+        console.log(newAtt);
+        newAtt.value = 'div1';
+
+        myDiv.setAttributeNode(newAtt);
+
+        newAtt2 = document.createAttribute('class');
+        newAtt2.value = 'div2';
+        myDiv.setAttributeNode(newAtt2); // 클래스 이름 추가가 아닌 교체
+
+        console.log(myDiv);
+        myDiv.attributes[0].value = 'div3';
+
+        myDiv.classList.add('div4');
+
+        myDiv.id = 'myId';
+    </script>
+</body>
+</html>

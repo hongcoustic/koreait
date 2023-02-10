@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array 객체</h2>
+    <script>
+        let numbers = [10, 20, 30, 40];
+        console.log(numbers);
+
+        for(i of numbers){
+            console.log(i);
+        }
+        // forEach() 함수의 인자에는 (익명)함수를 넘겨주고,
+        // 그 익명 함수는 3개의 피라미터를 갖고 있다.
+        // index에는 배열 속 인덱스가 대입되며
+        // array에는 자기 자신 배열이 대입된다.
+        numbers.forEach((els, index, array) => {
+            console.log(els);
+            console.log(index);
+            console.log(array);
+            console.log("--");
+
+        });
+
+        // 함수 사용 코드 한 줄로, 중괄호와 return 생략함.
+        // 익명함수의 매개변수 3개 중, index와 array는 사용하지 않을 경우, 생략 가능.
+        let res = numbers.map((value, index, array) => value * 2);
+        console.log("map() 사용 결과");
+        console.log(res);
+        // 기존의 numbers 의 배열은 바뀌지 않는다. 해당 배열에 함수 사용 결과 값을 변수에 담아서 사용
+        console.log(numbers);
+
+        // 함수 사용 코드 한줄로, 중괄호와 return 생략함.
+        // 익명함수의 매개변수 3개 중, index와 array는 사용하지 않을 경우, 생략 가능.
+        let res2 = numbers.filter((value, index, array) => value % 4 == 0);
+        console.log("filter() 사용 결과");
+        console.log(res2)
+
+        // 함수 사용 코드 한줄로, 중괄호와 return 생략함.
+        // 익명함수의 매개변수 3개 중, index와 array는 사용하지 않을 경우, 생략 가능.
+        let res3 = numbers.find((value, index, array) => index > 1 && value % 4 == 0);
+        console.log("find() 사용 결과");
+        console.log(res3);
+
+        let res4 = numbers.findIndex((value, index) => index > 1 && value % 4 == 0);
+        console.log("findIndex() 사용 결과");
+        console.log(res4);
+        </script>
+</body>
+</html>

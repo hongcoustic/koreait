@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>노드 추가하기</h2>
+    <p>
+        단락 1번 입니다.
+    </p>
+
+    <script>
+        // 추가하려는 노드 만들기.
+        let newNode = document.createElement('p');
+        let newTextNode = document.createTextNode('주문이 완료되었습니다.');
+
+        newNode.appendChild(newTextNode);
+
+        // 추가하려는 노드를 넣어줄 위치 찾기
+        // document.body.appendChild(newNode);
+        document.body.firstElementChild.after(newNode);
+
+        console.log(document.body.childNodes);
+
+        
+        
+
+    </script>
+</body>
+</html>

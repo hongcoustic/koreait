@@ -1,0 +1,32 @@
+.video .list .card .head .text {
+    font-weight: bold;
+    min-height: 40px;
+}
+
+.video .image video {
+    width: 100%;
+}
+
+.video .foot {
+    font-size: 16px;
+    justify-content: space-between;
+}
+
+.video .foot .left {
+    display: flex;
+}
+
+.video .foot .left .btn-box {
+    margin-left: 20px;
+}
+
+.video .foot .right {
+    line-height: 40px;
+    margin-right: 20px;
+}
+
+@media (max-width: 800px) {
+    .video .foot {
+        font-size: 12px;
+    }
+}

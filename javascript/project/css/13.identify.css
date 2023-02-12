@@ -1,0 +1,31 @@
+@media (max-width: 800px) {
+    * { margin: 0; padding: 0; }
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: white;
+    }
+
+    .card-box {
+        box-shadow: none;
+    }
+
+    .card-box > .head {
+        border-bottom: 0;
+    }
+
+    .card-box > .body td div {
+        font-size: 14px;
+    }
+
+    .card-box > .body .in-box {
+        font-size: 14px;
+    }
+
+    .card-box > .foot {
+        border-top: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

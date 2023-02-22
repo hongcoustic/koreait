@@ -1,26 +1,22 @@
-import styled from 'styled-components'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Counter from './pages/counter';
+import HomePage from './pages/homePage';
+import MaterialTestPage from './pages/material';
+import OpPage from './pages/operatorPage';
 
-// App : 사용자가 만든 새로운 컴포넌트
-
-// App 이라는 컴포넌트를 만들겠다.
 function App() {
   return (
-    <>
-      <MyH1>css를 적용한 나의 h1태그 입니다.</MyH1>
-      <h2>'안녕하세요'</h2>
-      <p>App 이라는 컴포넌트를 만들고 있습니다.</p>
-    </>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/counter' element={<Counter />} />
+        <Route path='/operator' element={<OpPage />} />
+        <Route path='/material' element={<MaterialTestPage />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
 export default App;
-
-// styled-components 사용하기
-// styled.컴포넌트이름`
-//  css문법
-// `
-const MyH1 = styled.h1`
-  font-size: 20px;
-  color: blue;
-  text-align: center;
-`

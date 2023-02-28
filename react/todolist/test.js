@@ -46,4 +46,17 @@ console.log('======================day04 논리연산맥락평가===============
 console.log('안녕' && 7);
 console.log(' ' && '반가워');
 
+console.log('======================day05 map()함수를 통해서 반복되는 컴포넌트 한번에 넣어주기===================')
+let ar = [1, 3, 5, 7];
+console.log(ar);
 
+let res = ar.map((v) => `<li>${v}번째 요소 입니다.</li>`);
+
+ar = [
+    {name: '양홍민', age: 10},
+    {name: '김예진', age: 20}
+]
+
+res = ar.map((v)=>`<li class=${v.name}>${v.age}</li>`);
+
+console.log(res);

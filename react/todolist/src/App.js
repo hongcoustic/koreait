@@ -1,20 +1,18 @@
+import { paths } from './assets/constant';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Counter from './pages/counter';
-import HomePage from './pages/homePage';
-import MaterialTestPage from './pages/material';
-import OpPage from './pages/operatorPage';
+import GlobalStyle from './styles/globalStyle';
 
 function App() {
+  const routes = paths.map((value)=> <Route path={value.path} element={value.component} key={value.path} />);
   return (
-
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/counter' element={<Counter />} />
-        <Route path='/operator' element={<OpPage />} />
-        <Route path='/material' element={<MaterialTestPage />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <GlobalStyle/>
+      <BrowserRouter>
+        <Routes>
+          {routes}
+        </Routes>
+      </BrowserRouter>
+    </>
 
   );
 }

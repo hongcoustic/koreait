@@ -60,3 +60,78 @@ ar = [
 res = ar.map((v)=>`<li class=${v.name}>${v.age}</li>`);
 
 console.log(res);
+
+console.log('======================day07 얕은 복사와 깊은 복사===================')
+// 자주 사용되는 number, string, boolean,... 은 깊은 복사
+// 배열, 사용자가 만든 객체들은 얕은 복사가 된다.
+
+// 얕은 복사 : 동일한 객체 자체가 새롭게 만들어지는 것이 아니라, 같은 객체의 위치(주소)만 저장이 된다.
+ar1 = [10, 20, 30];
+ar2 = ar1;
+ar2.push(50);
+console.log(ar1);
+
+// 깊은 복사 : 동일한 모양의 객체를 만들어서 대입하는 방식
+ar1 = [10, 20, 30];
+// ar2 = []
+
+// for(let i = 0; i < ar1.length; i++){
+//     ar2.push(ar1[i])
+// }
+ar2 = ar1.map(value => value);
+
+ar2.push(50);
+console.log(ar1);
+console.log(ar2);
+
+// spread operate : ... (단항연산자)
+// 깊은 복사를 도와주는 연산자
+// 연산자 사용 결과는 해당 배열 속에 들어있는 값들
+ar1 = [10, 20, 30];
+console.log(...ar1);
+ar2 = [...ar1, 50];
+console.log(ar1);
+console.log(ar2);
+
+// concat() 함수
+// 기존에 있던 배열에 다른 배열을 붙여서 새로운 배열을 반환한다.
+ar1 = [10, 20, 30];
+ar2 = ar1.concat(50);
+
+console.log(ar1);
+console.log(ar2);
+
+// 배열이 아닌 일반 객체에서 사용
+// s1과 s2는 같은 객체를 참조하고 있다.
+s1 = {id: 1, name: '양홍민', grade: 'A'};
+s2 = s1;
+
+s2.name = '김예진';
+console.log(s1);
+
+s1 = {id: 1, name: '양홍민', grade: 'A'};
+// s1.map(value => console.log(value)); // 에러, map() 함수는 배열에서만 사용 가능
+console.log({...s1});
+s2 = {...s1, age: 15};
+s2.name = '김예진';
+console.log(s1);
+console.log(s2);
+
+// 배열 깊은 복사하여 삭제하기
+// 반복문을 사용할 경우
+ar1 = ['양홍민', '김예진', '홍길동'];
+ar2 = [];
+for(let a of ar1){
+    if(a != '양홍민'){
+        ar2.push(a);
+    }
+}
+console.log(ar1);
+console.log(ar2);
+// 배열 속 특정 조건에 부합하는 요소가 들어있는 새로운 배열을 반환하는 함수
+// filter()
+ar1 = ['양홍민', '김예진', '홍길동'];
+ar2 = ar1.filter(value=>value !== '양홍민');
+console.log(ar1);
+console.log(ar2);
+

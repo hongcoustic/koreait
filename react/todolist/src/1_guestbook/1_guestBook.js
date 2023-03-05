@@ -1,5 +1,5 @@
 //방명록 페이지
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "../component/header";
 import SideBar from "../component/sideBar";
 import styled from "styled-components";
@@ -11,21 +11,49 @@ const GuestBookPage = () => {
     const [names, setNames] = useState(['양홍민','김철수','홍길동']);
     const [inputText, setInputText] = useState('');
 
-    const nameList = names.map((value)=> <GuestBookListCard>{value}<IconButton><Close /></IconButton> </GuestBookListCard>);
+    const nameInput = useRef(null);
+    
+    const onCancel = (e)=>{
+        console.log('x버튼 클릭');
+        let tmp = e.target.value; // names 배열에서 삭제시킬 값
+        console.log(tmp);
+        let ar = names.filter(value=>value !== tmp);
+        setNames(ar);
+    }
+
+    const nameList = names.map((value)=> <GuestBookListCard>{value}<IconButton value={value} onClick={onCancel}><Close /></IconButton></GuestBookListCard>);
 
     // input 태그에 입력된 값이 변화할때마다 실행되는 함수
     const inputChange = (e) => {
         // 매개변수 e 에는 event 관련 객체가 들어있다.
         // 어떤 태그에서 발생한 이벤트인지(x축, y축, 이벤트 종류...)
-        console.log(e);
-        console.log(e.target.value);
+        // console.log(e);
+        // console.log(e.target.value);
         setInputText(e.target.value);
     }
 
     const buttonClick = () => {
-        let tmp = names;
-        tmp.push(inputText);
+        // input 태그 속 내용이 비어있다면 alret() 함수를 실행하여 필수값 입력 안내하고 함수 종료
+        // if(!inputText){
+        //     alert('필수 입력 값입니다.');
+        //     return nameInput.current.focus();
+        // }
+        if(!nameInput.current.value){
+            alert('필수 입력 값입니다.');
+            return nameInput.current.focus();
+        }
+        let tmp = [...names, inputText];
         setNames(tmp);
+        setInputText('');
+        // input 태그를 찾아서 focus 시키기
+        // let target = document.querySelector('input');
+        // console.log(target);
+        // target.focus();
+
+        console.log(nameInput.current);
+        nameInput.current.focus();
+        
+
     }
     return (
         <>
@@ -39,7 +67,13 @@ const GuestBookPage = () => {
         <ContentWrap>
             <h2>방명록</h2>
             <InputDiv>
-                <input onChange={inputChange} type='text' placeholder='이름을 입력!' />
+                <input 
+                onChange={inputChange} 
+                type='text' 
+                placeholder='이름을 입력!'
+                ref={nameInput}
+                value={inputText}
+                 />
                 <button type='button' onClick={buttonClick}>추가하기!</button>
             </InputDiv>
             {nameList}

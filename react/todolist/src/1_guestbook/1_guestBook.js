@@ -13,15 +13,24 @@ const GuestBookPage = () => {
 
     const nameInput = useRef(null);
     
-    const onCancel = (e)=>{
+    // 네임카드 X버튼 닫힘
+    const onCancel = (name)=>{
         console.log('x버튼 클릭');
-        let tmp = e.target.value; // names 배열에서 삭제시킬 값
-        console.log(tmp);
-        let ar = names.filter(value=>value !== tmp);
+
+        let ar = names.filter(value=>value !== name);
         setNames(ar);
     }
 
-    const nameList = names.map((value)=> <GuestBookListCard>{value}<IconButton value={value} onClick={onCancel}><Close /></IconButton></GuestBookListCard>);
+
+    // 네임 카드 생성 배열
+    const nameList = names.map(
+        (value)=> 
+        <GuestBookListCard>{value}
+            <IconButton value={value} onClick={()=>onCancel(value)}>
+                <Close />
+            </IconButton>
+        </GuestBookListCard>
+    );
 
     // input 태그에 입력된 값이 변화할때마다 실행되는 함수
     const inputChange = (e) => {

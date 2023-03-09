@@ -8,11 +8,8 @@ import {paths} from '../assets/constant';
 
 function renderRow(props: ListChildComponentProps) {
   const { index, style } = props;
-
-  const onListItemClick = () => {
-    window.location.href = paths[index].path;
-  }
-
+  const onListItemClick = () =>  window.location.href = paths[index].path;
+  
   return (
     <ListItem style={style} key={index} component="div" disablePadding>
       <ListItemButton onClick={onListItemClick}>

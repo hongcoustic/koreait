@@ -19,4 +19,8 @@ const SchedulerTemplateWrap = styled.div`
     column-gap: 30px;
     min-height: 420px;
 
+    @media screen and (max-width:768px){
+        flex-direction: column;
+    }
+
 `;

@@ -3,17 +3,17 @@ import styled from "styled-components";
 import SchedulerListCardText from "./7_schedulerListCardText";
 
 const ScehdulerListCard = (props) => {
-    const {title, detail, completed, sTime, eTime} = props;
+    const {title, detail, completed, sTime, eTime, onClick, onXClick} = props;
     console.log(completed);
     return (
-        <ListCardWrap completed={completed}>
+        <ListCardWrap onClick={onClick} completed={completed}>
             <SchedulerListCardText
                 title={title}
                 detail={detail}
                 sTime={sTime}
                 eTime={eTime}
             />
-            <IconButton>
+            <IconButton onClick={onXClick}>
                 X
             </IconButton>
         </ListCardWrap>

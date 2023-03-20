@@ -2,7 +2,8 @@ import styled from "styled-components";
 import ScehdulerListCard from "./6_schedulerListCard";
 
 // 논리 처리(날짜와 스케쥴리스트를 받아서 해당 날짜의 스케쥴들이 들어있는 ListCard를 return 해주는 함수)
-const getListCards = (date, scheduleList, f) => {
+const getListCards = (date, scheduleList, f, f2) => {
+
     const key = date.format('YYYYMMDD');
 
     if(scheduleList[key] === undefined){
@@ -17,38 +18,54 @@ const getListCards = (date, scheduleList, f) => {
             sTime={v.sTime}
             eTime={v.eTime}
             onClick={()=>{f(v.id)}}
+            onXClick={()=>{f2(v.id)}}
             
         />
     );
 }
 
 const SchedulerContent = (props) => {
-    const {date,scheduleList,scheduleCnt,completedCnt,setScheduleList} = props;
+    const {date,scheduleList,scheduleCnt,completedCnt,setScheduleList,setIsOpen} = props;
     
     // ListCard 클릭 시, 활성화/비활성화
     const onCompleteClick = (id) => {
-        console.log('oncomplteClick 함수 실행됨!');
-        const key = date.format('YYYYMMDD');
-        const tmp = JSON.stringify(scheduleList); // 객체를 문자열로 변환
-        const copy = JSON.parse(tmp); // 문자열을 객체로 변환, 완전히 같은데 완전히 새로운(주소가) 객체가 된다.
+        
+        setScheduleList((scheduleList)=>{
+            console.log('oncomplteClick 함수 실행됨!');
+            const key = date.format('YYYYMMDD');
+            const tmp = JSON.stringify(scheduleList); // 객체를 문자열로 변환
+            const copy = JSON.parse(tmp); // 문자열을 객체로 변환, 완전히 같은데 완전히 새로운(주소가) 객체가 된다.
+    
+            const updatedSchedule = copy[key].map((v)=>
+                v.id === id ? {...v, isComplete : !v.isComplete} : v
+            );
+    
+            copy[key] = updatedSchedule;
+            return copy;
 
-        const updatedSchedule = copy[key].map((v)=>
-            v.id === id ? {...v, isComplete : !v.isComplete} : v
-        );
-
-        copy[key] = updatedSchedule;
-
-        setScheduleList(copy);
+        });
     }
 
-    const listCards = getListCards(date, scheduleList, onCompleteClick);
+    //listCard X버튼 동작 함수
+    const onXClick = (id) => {
+        setScheduleList((scheduleList)=> {
+            const copy = JSON.parse(JSON.stringify(scheduleList));
+            const key = date.format('YYYYMMDD');
+            copy[key] = copy[key].filter((v)=> v.id !== id);
+
+            return copy;
+            
+        });
+    }
+
+    const listCards = getListCards(date, scheduleList, onCompleteClick, onXClick);
 
     return (
         <SchedulerContentWrap>
             <ContentHeader>
                 <h2>{date.format('YYYY년 MM월 DD일')} 스케쥴</h2>
                 <p>총 {scheduleCnt}개 항목 중 {completedCnt}개 완료!</p>
-                <button>+</button>
+                <button onClick={()=>setIsOpen(true)}>+</button>
             </ContentHeader>
             {listCards}
         </SchedulerContentWrap>

@@ -5,6 +5,7 @@ import SchedulerTemplate from './3_schedulerTemplate';
 import SchedulerCalendar from './4_schedulerCalendar';
 import dayjs from 'dayjs';
 import SchedulerContent from './5_schedulerContent';
+import BottomSheet from './8_bottomSheet';
 
 const initialData = {
     '20230301':[
@@ -72,6 +73,7 @@ const getCompletefdCnt = (date, scheduleList) => {
 const MainPage= ()=>{
     const [date, setDate] = useState(dayjs());
     const [scheduleList, setScheduleList] = useState(initialData)
+    const [isOpen, setIsOpen] = useState(false);
     console.log(date);
 
     const scheduleCnt = getScheduleCnt(date, scheduleList);
@@ -92,8 +94,16 @@ const MainPage= ()=>{
                 scheduleCnt={scheduleCnt}
                 completedCnt={completedCnt}
                 setScheduleList={setScheduleList}
+                setIsOpen={setIsOpen}
                 />
             </SchedulerTemplate>
+            <BottomSheet 
+            date={date}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            scheduleList={scheduleList}
+            setScheduleList={setScheduleList}
+            />
         </MainWrap>
     );
 }

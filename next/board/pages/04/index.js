@@ -1,4 +1,5 @@
 import { gql, useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 import { useRef } from "react";
 
 const CREATE_NEW_BOARD = gql`
@@ -18,6 +19,8 @@ const CREATE_NEW_BOARD = gql`
 
 const GQLPage = () => {
     const [createNewBoard] = useMutation(CREATE_NEW_BOARD);
+    const router = useRouter();
+
     const inputRefs = useRef([]);
 
     const onButton1 = async () => {
@@ -25,11 +28,18 @@ const GQLPage = () => {
         const title = inputRefs.current[0].value;
         const contents = inputRefs.current[1].value;
         const writer = inputRefs.current[2].value;
+
         console.log(title, contents, writer);
-        let res = await createNewBoard( {variables: { writer: writer, title: title, contents: contents } } );
-        console.log(res);
-        console.log(res.data.createBoard.message);
-        console.log(inputRefs);
+
+        try{
+            let res = await createNewBoard( {variables: { writer: writer, title: title, contents: contents } } );
+            console.log(res);
+            console.log(res.data.createBoard.message);
+            console.log(inputRefs);
+            router.push(`/05/${res.data.createBoard.number}`)
+        }catch(err){
+            console.log(err);
+        }
     }
 
     return (

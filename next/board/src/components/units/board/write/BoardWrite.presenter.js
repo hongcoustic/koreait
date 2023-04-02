@@ -4,11 +4,23 @@ const BoardWriteUI = (props) => {
 
     return(
         <Wrapper>
-            <Title>BoardWrite Page</Title>
-            <Input placeholder="게시글 제목" ref={el=>props.inputRefs.current[0] = el} />
-            <Input placeholder="게시글 내용" ref={el=>props.inputRefs.current[1] = el} />
-            <Input placeholder="작성자" ref={el=>props.inputRefs.current[2] = el} />
-            <Button onClick={props.onButton1}>버튼 1</Button>
+            <Title>게시글 {props.isEdit ? '수정' : '작성'}하기</Title>
+            <Input 
+                placeholder="게시글 제목"
+                ref={el=>props.inputRefs.current[0] = el}
+                defaultValue={props.data?.fetchBoard?.title} 
+            />
+            <Input 
+                placeholder="게시글 내용" 
+                ref={el=>props.inputRefs.current[1] = el}
+                defaultValue={props.data?.fetchBoard?.contents} 
+            />
+            <Input 
+                placeholder="작성자" 
+                ref={el=>props.inputRefs.current[2] = el} 
+                defaultValue={props.data?.fetchBoard?.writer} 
+            />
+            <Button onClick={props.onButton1}>게시글 {props.isEdit ? '수정' : '작성'}</Button>
         </Wrapper>
     );
 }

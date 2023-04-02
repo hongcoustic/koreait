@@ -20,7 +20,7 @@ export const RowItem = styled.div`
     padding: 10px;
     border: 1px solid black;
     &:hover{
-        cursor: ${({type})=> type === 'title' && pointer};
+        cursor: ${({type})=> type === 'title' && 'pointer'};
     }
 
     ${

@@ -7,11 +7,16 @@ const BoardList = () => {
     const {data} = useQuery(FETCH_BOARDS);
     const router = useRouter();
     const onButtonClick = (number) => {
-        router.push(`/05/${number}`);
+        router.push(`/boards/${number}`);
+    }
+    
+    const onNewBoard = () => {
+        router.push('/boards/new');
     }
     return(<BoardListUI 
             data={data}
             onButtonClick={onButtonClick}
+            onNewBoard={onNewBoard}
         />);
 }
 

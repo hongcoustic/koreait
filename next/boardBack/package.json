@@ -1,0 +1,16 @@
+{
+  "name": "boardback",
+  "version": "0.0.1",
+  "description": "백엔드 연습",
+  "main": "app.js",
+  "author": "Aaron Yang",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

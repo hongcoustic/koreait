@@ -10,6 +10,8 @@
 import express from "express";
 import morgan from "morgan";
 import router from "./routers/boards.js"
+import mysql from "mysql2/promise.js"
+import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from "./env.js";
 
 // app 에는 우리가 사용할 Express 객체가 들어있다.
 // Express 객체 속에는 api 제작에 도움을 주는 여러 함수들이 만들어져 있다!
@@ -30,7 +32,7 @@ app.listen(app.get("port"), console.log(`${app.get("port")} 번에서 실행중 
 // 'dev' : 개발할 때 (시간, 경로, 요청메소드)
 // 'combined' : 배포할 때 (사용자 정보 포함하여)
 // 'tiny' 'common' 'short'
-app.use(morgan('short'));
+app.use(morgan('dev'));
 
 // body-parser
 // express 4.16.0 버전부터 기본 내장
@@ -43,10 +45,25 @@ app.use(express.urlencoded({extended:false})); // extended 는 반드시 설정,
 
 app.use("/boards", router);
 
+// db 연결을 위한 connection pool 만들기
+const pool = mysql.createPool({
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
+    waitForConnections: true,
+    port: DB_PORT
+});
+
 // get 요청받아보기
-app.get("/", (req, res)=>{
-    res.send("hello world");
-})
+// app.get("/", async (req, res)=>{
+//     console.log('get 요청 진행중');
+//     let conn = await pool.getConnection(async (err, conn)=>{return conn});
+//     let [rows, field] = await conn.query('select * from tbl_posts');
+//     console.log('get요청 종료');
+//     res.send(rows);
+// })
+
 // app.get("/boards", (req, res)=>{
 //     // req 변수에는 프론트에서 사용자가 요청한 요청 정보들이 담겨있는 Request 객체가 담겨있다.
 //     //res 변수에는 응답으로 전달할 때 사용할 수 있는 여러가지 함수들이 들어있는 Response 객체가 들어있다.

@@ -20,4 +20,7 @@ value('두번째 게시글!', '안녕하세요!', 3);
 insert into tbl_posts(pTitle,pContent,userId)
 value('게시글 작성했어요', '반갑습니다 잘부탁드려요', 1);
 
-
+#5번 게시글 수정
+update tbl_posts
+set pTitle = '제목을 수정하기', userId=4, pContent = '내용 수정했습니다'
+where pId=6;

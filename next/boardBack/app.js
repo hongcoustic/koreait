@@ -10,8 +10,7 @@
 import express from "express";
 import morgan from "morgan";
 import router from "./routers/boards.js"
-import mysql from "mysql2/promise.js"
-import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from "./env.js";
+import pool, { getConnection } from "./db.js";
 
 // app 에는 우리가 사용할 Express 객체가 들어있다.
 // Express 객체 속에는 api 제작에 도움을 주는 여러 함수들이 만들어져 있다!
@@ -46,13 +45,49 @@ app.use(express.urlencoded({extended:false})); // extended 는 반드시 설정,
 app.use("/boards", router);
 
 // db 연결을 위한 connection pool 만들기
-const pool = mysql.createPool({
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_DATABASE,
-    waitForConnections: true,
-    port: DB_PORT
+
+
+// localhost:3001/test get 요청
+// res(응답할때 사용하는 객체)에서 사용할 수 있는 함수
+// res.status(상태코드))
+// res.send() : 응답으로 문자열을 결과로 줄 때 사용(content-type 을 알아서 판단, 만능)
+// res.json() : 응답으로 json형식으로 바꾸어 보내줌(content-type 이 application/JSON 으로 고정)
+// res.render() : 응답으로 html 코드 형식을 제공
+// res.end() : 응답으로 보낼 데이터가 없을 때 응답 종료
+app.get('/test', async (req, res)=>{
+    let testResponse = {
+        message: '사용자 목록 가져오기 성공!'
+    };
+    try{
+        let connection = await getConnection();
+        let [rows, field] = await connection.query('select * from tbl_users');
+        connection.release();
+        testResponse.data = rows;
+        res.status(200).json(testResponse);
+    } catch(err){
+        res.status(500).end(); // 500은 서버 내부적인 오류
+    }
+});
+
+//동적 쿼리 저ㅏㄱ성
+app.get('/users/:uId', async (req, res)=>{
+    console.log('/users/:userId get 요청 발생!');
+    let usersRes = {
+        message: '유저 정상적으로 받아옴!'
+    };
+    try{
+        let connection = await getConnection();
+        let sql = `select * from tbl_users where uId=+${req.params.uId}`;
+        let [rows, field] = await connection.query(sql);
+        if(rows.length === 0){
+            usersRes.message = '유저 조회 실패!';
+        }
+        usersRes.data = rows;
+        res.status(200).json(usersRes);
+    } catch(err){
+        console.log('서버 자체 오류 발생', err);
+        res.status(500).end();
+    }
 });
 
 // get 요청받아보기

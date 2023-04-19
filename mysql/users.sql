@@ -38,3 +38,5 @@ values
 ('박영희', '희영이', 'hongcou@naver.com', '010-1234-4555','www.naver.com' ,null, '서울특별시', '관악구', '신림길 12-1', '23425', '20230410', '20230412');
 
 
+select * from tbl_users
+where uId = 3;

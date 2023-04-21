@@ -69,7 +69,7 @@ app.get('/test', async (req, res)=>{
     }
 });
 
-//동적 쿼리 저ㅏㄱ성
+//동적 쿼리 작성
 app.get('/users/:uId', async (req, res)=>{
     console.log('/users/:userId get 요청 발생!');
     let usersRes = {
@@ -104,4 +104,88 @@ app.get('/users/:uId', async (req, res)=>{
 //     //res 변수에는 응답으로 전달할 때 사용할 수 있는 여러가지 함수들이 들어있는 Response 객체가 들어있다.
 //     res.send({name:"양홍민", age:38});
 // });
+
+app.get('/tmp/users', async (req, res)=>{
+    try{
+        let sql = 'select * from tbl_users where uName=? or uName=?;';
+        let conn = await getConnection();
+        let [rows, field] = await conn.query(sql, [req.query.u1, req.query.u2]);
+        conn.release();
+        res.status(200).json(rows);
+
+    }catch(err){
+        console.log(err);
+        res.status(500).end();
+    }
+
+});
+
+// 다중쿼리 테스트
+app.get('/tmp/:uId', async (req, res)=>{
+    try{
+        let sql = 'select * from tbl_users where uId = ?;';
+        let conn = await getConnection();
+        let [rows, field] = await conn.query(sql, req.params.uId);
+        conn.release();
+        res.status(200).json(rows);
+
+    }catch(err){
+        console.log(err);
+        res.status(500).end();
+    }
+
+});
+
+
+app.post('/tmp/users', async (req, res)=>{
+    try{
+        let insertValue = [
+            '신순재',
+            'shinsoonjae',
+            'soonjae0@gmail.com',
+            '010-5555-5555',
+            'https://www.daum.com',
+            null,
+            '원주시',
+            '문막읍',
+            '문막로 145', 
+            '08832', 
+            '20230417', 
+            '20230417'
+        ];
+        let sql = `
+        insert into tbl_users 
+        (uName, userName, uEmail, uPhone, uWebsite, uProvince, uCity, uDistrict, uStreet, uZipcode, createdAt, updatedAt)
+        values 
+        (?);
+        `;
+        let conn = await getConnection();
+        let [rows, field] = await conn.query(sql, [insertValue]);
+        conn.release();
+
+        res.status(201).json(rows);
+
+    }catch(err){
+        console.log(err);
+        res.status(500).end();
+    }
+});
+
+// insert 같은 경우에는 여러개의 인자를 객체로 전달
+app.post('/tmp/boards', async (req, res)=>{
+    try{
+        // let insertValue = [req.body.pTitle, req.body.pContent, req.body.userId];
+        let sql = `
+        insert into tbl_posts
+        set ?;
+        `;
+        let conn = await getConnection();
+        let [rows, field] = await conn.query(sql, req.body);
+        conn.release();
+        res.status(201).json(rows);
+    }catch(err){
+        console.log(err);
+        res.status(500).end();
+    }
+});
 

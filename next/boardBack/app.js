@@ -10,7 +10,9 @@
 import express from "express";
 import morgan from "morgan";
 import router from "./routers/boards.js"
-import pool, { getConnection } from "./db.js";
+import { getConnection } from "./db.js";
+// cors
+import cors from "cors";
 
 // app 에는 우리가 사용할 Express 객체가 들어있다.
 // Express 객체 속에는 api 제작에 도움을 주는 여러 함수들이 만들어져 있다!
@@ -20,6 +22,8 @@ app.set("port", 3001); // 서버 포트번호 설정하기
 // 해당 포트 번호에서 서버를 실행시켜줘(요청을 들어줘)
 // listen 함수를 통해, 3001번 포트에서 발생하는 요청은 모두 app.js 로 전달된다!
 app.listen(app.get("port"), console.log(`${app.get("port")} 번에서 실행중 입니다.`));
+
+app.use(cors());
 
 // 미들웨어 : 요청과 응답 사이를 거쳐서 실행되는 함수들
 // boards get 요청! -> 미들웨어 -> 게시글 목록 데이터 응답!

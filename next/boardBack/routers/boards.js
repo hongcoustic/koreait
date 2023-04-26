@@ -72,6 +72,7 @@ router.get('/new', (req, res)=>{
     res.send('/new 응답!');
 })
 
+// get요청 localhost:3001/boards/6
 router.get('/:boardNum', async (req, res)=>{
     // // router parameter로 전달한 값은 req 객체 속 params 객체 속 변수명에 들어있다
     // res.send(`${req.params.boardNum} 번 게시글 요청에 대한 응답! /boardNum 응답!`);
@@ -83,7 +84,7 @@ router.get('/:boardNum', async (req, res)=>{
         conn.release();
         let boardDetailRes = {
             message: `${req.params.boardNum}번 게시글 조회 성공!`,
-            data :rows
+            fetch_board: rows[0]
         };
         res.status(200).json(boardDetailRes);
     } catch(err){

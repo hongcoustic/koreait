@@ -12,7 +12,13 @@ const BoardList = () => {
     useEffect(()=>{
         // 데이터 받아오기
         FETCH_BOARDS()
-        .then((a)=>{setPostsList(a.data.data)})
+        .then((a)=>{
+            // a.data.data 는 배열인데, 이를 createdAt 내림차순으로 정렬한 후,
+            // postList 에 대입
+            // a.data.data 속에 들어있는 값의 순서를 원하는 모양으로 바꿔주고,
+            // 이를 
+            setPostsList(a.data.data)
+        })
         .catch((err)=>{console.log(err)});
     }, []); 
 

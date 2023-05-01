@@ -11,12 +11,21 @@ const BoardDetail = ()=>{
     // 데이터를 다 받아오면 setPost()가 실행되어 post 속의 값이 변하면서 다시 렌더링 된다.
     const [post, setPost] = useState(null);
     useEffect(()=>{
+        if(!router.isReady) return;
         FETCH_BOARD(router.query.boardId)
         .then((res)=>{setPost(res.data.fetch_board)})
         .catch((err)=>console.log(err));
-    }, []);
+    }, [router.isReady]);
+
+    const onMoveToUpdate = () => {
+        router.push(`http://localhost:3002/boards/${router.query.boardId}/update`);
+    }
+
     return(
-        <BoardDetailUI post={post} />
+        <BoardDetailUI
+        post={post}
+        onMoveToUpdate={onMoveToUpdate}
+        />
     );
 }
 

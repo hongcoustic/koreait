@@ -22,7 +22,7 @@ const BoardDetailUI = (props) => {
                     <BoardContent>
                         {props.post?.pContent}
                     </BoardContent>
-                    <WriteBtn>수정하기</WriteBtn>
+                    <WriteBtn onClick={props.onMoveToUpdate}>수정하기</WriteBtn>
             </BoardDetailWrap>
         </Layout>
     );

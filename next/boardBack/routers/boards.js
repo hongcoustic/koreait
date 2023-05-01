@@ -9,13 +9,13 @@ router.put('/:boardNum', async (req, res)=>{
     try{
         let sql = `
             update tbl_posts
-            set pTitle = '${req.body.title}', userId=${req.body.userId}, pContent = '${req.body.content}', updatedAt = now()
+            set pTitle = '${req.body.title}', pContent = '${req.body.content}', updatedAt = now()
             where pId = ${req.params.boardNum};
         `;
         let conn = await getConnection();
         let a = await conn.query(sql);
         conn.release();
-        res.json({message: `${req.params.boardNum}번째 글 수정완료!`, data: a});
+        res.json({message: `${req.params.boardNum}번째 글 수정완료!`, target: `${req.params.boardNum}`});
 
     } catch(err) {
         console.log('서버오류 발생!', err);
@@ -60,7 +60,7 @@ router.post('/', async (req, res)=>{
         // insert 쿼리 실행 결과로는 insert 된 행에 대한 여러 정보들이 들어있다.
         conn.release();
 
-        res.json({message: '새롭게 추가 성공!', data: a});
+        res.json({message: '새롭게 추가 성공!', newId: a[0].insertId});
 
     } catch(err){
         console.log('서버 내부 오류', err);

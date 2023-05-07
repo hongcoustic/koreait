@@ -43,6 +43,7 @@ export const SearchBtn = styled.button`
   border-radius: 0;
   cursor: pointer;
   padding: 5px 10px;
+  flex-shrink: 0;
 `;
 
 export const BoardTableHeader = styled.div`

@@ -1,87 +1,51 @@
-// console.log('첫번째 작업');
+let postList = [
+    {page:10},
+    {page:1},
+    {page:16},
+    {page:17},
+    {page:5},
+    {page:78},
+    {page:46}
 
-// // setTimeout 함수는 첫번째 인자로 실행시킬 함수를 넘겨준다.
-// // 두번째 인자로는 지연시킬 ms 를 넘겨준다.
-// // (선택) 그 뒤의 인자는 실행시킬 함수의 인자로 넘어가는 값들을 넣어준다.
-// setTimeout(console.log, 1000, '안녕');
-// //setTime(()=>{console.log('안녕')}, 1000) 과 같다.
+];
 
-// console.log('작업 완료');
+console.log('정렬 전 postList : ', postList);
 
-
-// //1. 콜백 함수(인자로 함수를 넘겨준다)를 이용한다.
-// const f1 = (a) => {
-//     setTimeout(()=>{
-//         console.log('데이터 받아오기 완료');
-//         a();
-//     }, 1000);
-// }
-
-// const f2 =() => {
-//     console.log('받아온 데이터를 출력 했습니다.');
-// }
-
-// f1(f2);
-
-// 콜백 지옥
-// 동기함수 1이 완전히 끝난 후 동기함수 2 완전히 끝난 후 동기함수 3 완전히 끝난 후...
-// 마지막으로 작업을 해야하는 task 가 있을 때 함수를 인자로 넘겨주는 방식은 너무나도 복잡해진다.
-
-// // 2. Promise 객체
-// let a = new Promise((resolver, reject)=>{
-//     setTimeout(()=>{resolver(100)}, 5000);
-// });
-// console.log(a);
-// a.then((resolver)=>{console.log(resolver)});
-
-// console.log('양홍민');
-
-// // fetch 함수는 인자로 API(경로)를 작성한다.
-// // 그리고 기본적으로는 GET 방식으로 해석한다.
-// let a = fetch("http://koreanjson.com/users");
-// console.log(a);
-
-// a.then((param)=>{return param.json()}).then((param)=>{
-//     console.log(param)
-
-//     for(let i = 0 ; i < param.length ; i++){
-//         console.log(param[i].name);
-//     }
+// 첫번째 반복 : 2번째 요소와 그 이전 요소들 크기 비교 1 10 -> -1
+// 두번째, 세번째 반복 : 3번째 요소와 그 이전 요소들 (2번, 1번 요소) 크기 비교
+// 16 1 -> 1, 16 10 -> 1
+// 17 과 그 이전 요소들(16, 10) 검사
+// 17 10 -> 1, 17 16 -> 1
 
 
-// });
-
-
-// // GET 방식을 통해 3번 아이디를 가진 user 의 정보 출력하기
-// fetch("https://www.koreanjson.com/usersj/3")
-// .then((resp)=>{return resp.json()})
-// .then((user)=>{console.log(user)})
-// .catch((err)=>{console.log(err)});
-
-// 가상 유저
-
-let newUser = {
-    "id": 11,
-    "name": "양홍민",
-    "username": "kanginlee",
-    "email": "kanginlee@hanmail.net",
-    "phone": "010-9311-9411",
-    "website": "https://twitter.com/@kanginlee",
-    "province": "전라북도",
-    "city": "전주시",
-    "district": "완산구",
-    "street": "풍남동3가 64-1",
-    "zipcode": "55041",
-    "createdAt": "2019-02-24T16:17:47.000Z",
-    "updatedAt": "2019-02-24T16:17:47.000Z"
-}
-
-fetch('https://koreanjson.com/users/', {
-    method : 'POST',
-    body : JSON.stringify(newUser),
-    header: {
-        'Content-Type' : 'application/json'
-    }
-}).then(resp=>resp.json()).then(newUser=>{
-    console.log('우리가 추가한 user :' ,newUser);
+postList.sort((a, b)=>{
+    console.log('sort 안의 함수, a:', a, 'b: ', b);
+    // a는 뒤 요소, b는 앞 요소 -> 뒤쪽요소.page 는 큰 값들이 들어있다. 요소.page 오름차순 정렬
+    return a.page - b.page;
 });
+console.log('정렬 후 postList : ', postList);
+
+let nameList = [
+    'apple',
+    'abcdeffff',
+    'a',
+    'banana'
+];
+
+nameList.sort((a, b)=>{return a.length - b.length});
+console.log(nameList);
+
+postList = [
+    {createdAt:'2023-04-01'},
+    {createdAt:'2023-03-01'},
+    {createdAt:'2023-07-01'},
+    {createdAt:'2023-04-15'}
+];
+
+postList.sort((a, b)=>{
+    return new Date(a.createdAt) - new Date(b.createdAt)
+});
+
+console.log(postList);
+
+console.log(new Date('2023-05-02') - new Date('2023-05-01'));
